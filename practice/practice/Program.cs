@@ -20,7 +20,7 @@ namespace practice
 
             for (a = 2 ; a <= number; a++)
             {
-                count = 0; 
+               
                 for (b = 1; b <= a; b++)
                 {
                     if(a % b == 0)
@@ -33,7 +33,8 @@ namespace practice
                     Console.Write(" " + a + " ");
                     total++;
                 }
-                
+                count = 0;
+
             }
             Console.Write("\n" + "The total number of prime number is : " + total);
 
