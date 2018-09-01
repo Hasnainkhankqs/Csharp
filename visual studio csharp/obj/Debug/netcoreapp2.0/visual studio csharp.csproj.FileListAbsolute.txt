@@ -1,0 +1,11 @@
+D:\visual studio csharp\bin\Debug\netcoreapp2.0\visual studio csharp.deps.json
+D:\visual studio csharp\bin\Debug\netcoreapp2.0\visual studio csharp.runtimeconfig.json
+D:\visual studio csharp\bin\Debug\netcoreapp2.0\visual studio csharp.runtimeconfig.dev.json
+D:\visual studio csharp\bin\Debug\netcoreapp2.0\visual studio csharp.dll
+D:\visual studio csharp\bin\Debug\netcoreapp2.0\visual studio csharp.pdb
+D:\visual studio csharp\obj\Debug\netcoreapp2.0\visual studio csharp.csprojAssemblyReference.cache
+D:\visual studio csharp\obj\Debug\netcoreapp2.0\visual studio csharp.csproj.CoreCompileInputs.cache
+D:\visual studio csharp\obj\Debug\netcoreapp2.0\visual studio csharp.AssemblyInfoInputs.cache
+D:\visual studio csharp\obj\Debug\netcoreapp2.0\visual studio csharp.AssemblyInfo.cs
+D:\visual studio csharp\obj\Debug\netcoreapp2.0\visual studio csharp.dll
+D:\visual studio csharp\obj\Debug\netcoreapp2.0\visual studio csharp.pdb
