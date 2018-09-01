@@ -1,0 +1,7 @@
+c:\users\hasnain\source\repos\28_08_18Lab\28_08_18Lab\bin\Debug\28_08_18Lab.exe.config
+c:\users\hasnain\source\repos\28_08_18Lab\28_08_18Lab\bin\Debug\28_08_18Lab.exe
+c:\users\hasnain\source\repos\28_08_18Lab\28_08_18Lab\bin\Debug\28_08_18Lab.pdb
+c:\users\hasnain\source\repos\28_08_18Lab\28_08_18Lab\obj\Debug\28_08_18Lab.csprojAssemblyReference.cache
+c:\users\hasnain\source\repos\28_08_18Lab\28_08_18Lab\obj\Debug\28_08_18Lab.csproj.CoreCompileInputs.cache
+c:\users\hasnain\source\repos\28_08_18Lab\28_08_18Lab\obj\Debug\28_08_18Lab.exe
+c:\users\hasnain\source\repos\28_08_18Lab\28_08_18Lab\obj\Debug\28_08_18Lab.pdb

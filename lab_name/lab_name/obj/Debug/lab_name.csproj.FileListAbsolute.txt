@@ -1,0 +1,6 @@
+C:\Users\Hasnain\source\repos\lab_name\lab_name\bin\Debug\lab_name.exe.config
+C:\Users\Hasnain\source\repos\lab_name\lab_name\bin\Debug\lab_name.exe
+C:\Users\Hasnain\source\repos\lab_name\lab_name\bin\Debug\lab_name.pdb
+C:\Users\Hasnain\source\repos\lab_name\lab_name\obj\Debug\lab_name.csproj.CoreCompileInputs.cache
+C:\Users\Hasnain\source\repos\lab_name\lab_name\obj\Debug\lab_name.exe
+C:\Users\Hasnain\source\repos\lab_name\lab_name\obj\Debug\lab_name.pdb
