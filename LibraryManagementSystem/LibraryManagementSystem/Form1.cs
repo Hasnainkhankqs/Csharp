@@ -58,6 +58,11 @@ namespace LibraryManagementSystem
                             SqlDataAdapter sda = new SqlDataAdapter(Query, conn);
                             sda.SelectCommand.ExecuteNonQuery();
                             MessageBox.Show("User registerd successfully");
+                            login_form login = new login_form();
+                            login.Show();
+                            this.Hide();
+                            
+
                             
                             conn.Close();
                         }
@@ -73,6 +78,7 @@ namespace LibraryManagementSystem
             {
 
                 MessageBox.Show(ex.Message);
+                conn.Close();
             }
         }
        private int Getgender()
