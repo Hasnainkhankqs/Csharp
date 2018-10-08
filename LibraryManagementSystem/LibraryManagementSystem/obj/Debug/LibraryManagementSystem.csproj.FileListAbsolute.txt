@@ -9,3 +9,15 @@ C:\Users\Hasna\source\repos\LibraryManagementSystem\LibraryManagementSystem\obj\
 C:\Users\Hasna\source\repos\LibraryManagementSystem\LibraryManagementSystem\obj\Debug\LibraryManagementSystem.pdb
 C:\Users\Hasna\source\repos\LibraryManagementSystem\LibraryManagementSystem\obj\Debug\LibraryManagementSystem.registration_form.resources
 C:\Users\Hasna\source\repos\LibraryManagementSystem\LibraryManagementSystem\obj\Debug\LibraryManagementSystem.Admin_panal.resources
+D:\Csharp\LibraryManagementSystem\LibraryManagementSystem\bin\Debug\LibraryManagementSystem.exe.config
+D:\Csharp\LibraryManagementSystem\LibraryManagementSystem\bin\Debug\LibraryManagementSystem.exe
+D:\Csharp\LibraryManagementSystem\LibraryManagementSystem\bin\Debug\LibraryManagementSystem.pdb
+D:\Csharp\LibraryManagementSystem\LibraryManagementSystem\obj\Debug\LibraryManagementSystem.csprojAssemblyReference.cache
+D:\Csharp\LibraryManagementSystem\LibraryManagementSystem\obj\Debug\LibraryManagementSystem.Admin_panal.resources
+D:\Csharp\LibraryManagementSystem\LibraryManagementSystem\obj\Debug\LibraryManagementSystem.Registration_form.resources
+D:\Csharp\LibraryManagementSystem\LibraryManagementSystem\obj\Debug\LibraryManagementSystem.login_form.resources
+D:\Csharp\LibraryManagementSystem\LibraryManagementSystem\obj\Debug\LibraryManagementSystem.Properties.Resources.resources
+D:\Csharp\LibraryManagementSystem\LibraryManagementSystem\obj\Debug\LibraryManagementSystem.csproj.GenerateResource.cache
+D:\Csharp\LibraryManagementSystem\LibraryManagementSystem\obj\Debug\LibraryManagementSystem.csproj.CoreCompileInputs.cache
+D:\Csharp\LibraryManagementSystem\LibraryManagementSystem\obj\Debug\LibraryManagementSystem.exe
+D:\Csharp\LibraryManagementSystem\LibraryManagementSystem\obj\Debug\LibraryManagementSystem.pdb
