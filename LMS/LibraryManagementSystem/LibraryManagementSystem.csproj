@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{BEA01D47-1FF8-481E-B1E0-0DEFF01242DA}</ProjectGuid>
+    <ProjectGuid>{EB6256FE-A062-4419-80CA-FF462078634F}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <RootNamespace>LibraryManagementSystem</RootNamespace>
     <AssemblyName>LibraryManagementSystem</AssemblyName>
@@ -34,6 +34,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -46,34 +47,22 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="admin_panal.cs">
+    <Compile Include="Login_form.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="admin_panal.Designer.cs">
-      <DependentUpon>admin_panal.cs</DependentUpon>
+    <Compile Include="Login_form.Designer.cs">
+      <DependentUpon>Login_form.cs</DependentUpon>
     </Compile>
-    <Compile Include="registration.cs">
+    <Compile Include="Registration_form.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="registration.Designer.cs">
-      <DependentUpon>registration.cs</DependentUpon>
-    </Compile>
-    <Compile Include="login_form.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="login_form.Designer.cs">
-      <DependentUpon>login_form.cs</DependentUpon>
+    <Compile Include="Registration_form.Designer.cs">
+      <DependentUpon>Registration_form.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="admin_panal.resx">
-      <DependentUpon>admin_panal.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="registration.resx">
-      <DependentUpon>registration.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="login_form.resx">
-      <DependentUpon>login_form.cs</DependentUpon>
+    <EmbeddedResource Include="Login_form.resx">
+      <DependentUpon>Login_form.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -84,6 +73,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Registration_form.resx">
+      <DependentUpon>Registration_form.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -95,7 +87,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

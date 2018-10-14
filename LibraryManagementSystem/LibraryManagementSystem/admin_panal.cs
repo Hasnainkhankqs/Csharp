@@ -42,6 +42,7 @@ namespace LibraryManagementSystem
             {
 
                 MessageBox.Show(ex.Message);
+                conn.Close();
             }
         }
 
@@ -66,6 +67,7 @@ namespace LibraryManagementSystem
             {
 
                 MessageBox.Show(ex.Message);
+                conn.Close();
             }
         }
 
@@ -90,12 +92,13 @@ namespace LibraryManagementSystem
             {
 
                 MessageBox.Show(ex.Message);
+                conn.Close();
             }
         }
 
         private void Edit_btn_Click(object sender, EventArgs e)
         {
-            string Query = "UPDATE Customers SET ContactName = 'Alfred Schmidt', City = 'Hamburg' WHERE CustomerName = 'Alfreds Futterkiste'; ";
+            string Query = "update Customers SET ContactName = 'ali', City = 'karacho' WHERE CustomerName = 'farhan'; ";
             SqlCommand cmd = new SqlCommand(Query, conn);
             DataSet ds = new DataSet();
             SqlDataAdapter sda = new SqlDataAdapter(cmd);
@@ -104,5 +107,7 @@ namespace LibraryManagementSystem
             dataGridView1.DataMember = ds.Tables[0].ToString();
             conn.Close();
         }
+        
+        
     }
 }

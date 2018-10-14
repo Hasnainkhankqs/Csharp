@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Registration_form));
             this.name_label = new System.Windows.Forms.Label();
             this.email_label = new System.Windows.Forms.Label();
             this.phone_no_label = new System.Windows.Forms.Label();
@@ -40,12 +39,13 @@
             this.password_txt_box = new System.Windows.Forms.TextBox();
             this.confirm_password_txt_box = new System.Windows.Forms.TextBox();
             this.registration_detail_group = new System.Windows.Forms.GroupBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.label6 = new System.Windows.Forms.Label();
-            this.user_type_combo = new System.Windows.Forms.ComboBox();
-            this.gender_label = new System.Windows.Forms.Label();
-            this.male_radio_btn = new System.Windows.Forms.RadioButton();
+            this.loginlabel = new System.Windows.Forms.LinkLabel();
             this.female_radio_btn = new System.Windows.Forms.RadioButton();
+            this.male_radio_btn = new System.Windows.Forms.RadioButton();
+            this.gender_label = new System.Windows.Forms.Label();
+            this.user_type_combo = new System.Windows.Forms.ComboBox();
+            this.registerBtn = new System.Windows.Forms.Button();
+            this.label6 = new System.Windows.Forms.Label();
             this.registration_detail_group.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -119,6 +119,7 @@
             // 
             this.password_txt_box.Location = new System.Drawing.Point(154, 160);
             this.password_txt_box.Name = "password_txt_box";
+            this.password_txt_box.PasswordChar = '*';
             this.password_txt_box.Size = new System.Drawing.Size(100, 20);
             this.password_txt_box.TabIndex = 3;
             // 
@@ -126,17 +127,19 @@
             // 
             this.confirm_password_txt_box.Location = new System.Drawing.Point(154, 205);
             this.confirm_password_txt_box.Name = "confirm_password_txt_box";
+            this.confirm_password_txt_box.PasswordChar = '*';
             this.confirm_password_txt_box.Size = new System.Drawing.Size(100, 20);
             this.confirm_password_txt_box.TabIndex = 4;
             // 
             // registration_detail_group
             // 
             this.registration_detail_group.BackColor = System.Drawing.Color.Gray;
+            this.registration_detail_group.Controls.Add(this.loginlabel);
             this.registration_detail_group.Controls.Add(this.female_radio_btn);
             this.registration_detail_group.Controls.Add(this.male_radio_btn);
             this.registration_detail_group.Controls.Add(this.gender_label);
             this.registration_detail_group.Controls.Add(this.user_type_combo);
-            this.registration_detail_group.Controls.Add(this.button1);
+            this.registration_detail_group.Controls.Add(this.registerBtn);
             this.registration_detail_group.Controls.Add(this.name_txt_box);
             this.registration_detail_group.Controls.Add(this.confirm_password_label);
             this.registration_detail_group.Controls.Add(this.confirm_password_txt_box);
@@ -155,16 +158,67 @@
             this.registration_detail_group.TabStop = false;
             this.registration_detail_group.Text = "User info";
             // 
-            // button1
+            // loginlabel
             // 
-            this.button1.ForeColor = System.Drawing.Color.Black;
-            this.button1.Location = new System.Drawing.Point(179, 336);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 8;
-            this.button1.Text = "Register";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.Submit_btn);
+            this.loginlabel.AutoSize = true;
+            this.loginlabel.Location = new System.Drawing.Point(130, 341);
+            this.loginlabel.Name = "loginlabel";
+            this.loginlabel.Size = new System.Drawing.Size(33, 13);
+            this.loginlabel.TabIndex = 12;
+            this.loginlabel.TabStop = true;
+            this.loginlabel.Text = "Login";
+            this.loginlabel.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.Loginlabel_LinkClicked);
+            // 
+            // female_radio_btn
+            // 
+            this.female_radio_btn.AutoSize = true;
+            this.female_radio_btn.Location = new System.Drawing.Point(195, 248);
+            this.female_radio_btn.Name = "female_radio_btn";
+            this.female_radio_btn.Size = new System.Drawing.Size(59, 17);
+            this.female_radio_btn.TabIndex = 6;
+            this.female_radio_btn.TabStop = false;
+            this.female_radio_btn.Text = "Female";
+            this.female_radio_btn.UseVisualStyleBackColor = true;
+            // 
+            // male_radio_btn
+            // 
+            this.male_radio_btn.AutoSize = true;
+            this.male_radio_btn.Location = new System.Drawing.Point(141, 248);
+            this.male_radio_btn.Name = "male_radio_btn";
+            this.male_radio_btn.Size = new System.Drawing.Size(48, 17);
+            this.male_radio_btn.TabIndex = 5;
+            this.male_radio_btn.TabStop = false;
+            this.male_radio_btn.Text = "Male";
+            this.male_radio_btn.UseVisualStyleBackColor = true;
+            // 
+            // gender_label
+            // 
+            this.gender_label.AutoSize = true;
+            this.gender_label.Location = new System.Drawing.Point(17, 248);
+            this.gender_label.Name = "gender_label";
+            this.gender_label.Size = new System.Drawing.Size(42, 13);
+            this.gender_label.TabIndex = 12;
+            this.gender_label.Text = "Gender";
+            // 
+            // user_type_combo
+            // 
+            this.user_type_combo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.user_type_combo.FormattingEnabled = true;
+            this.user_type_combo.Location = new System.Drawing.Point(133, 292);
+            this.user_type_combo.Name = "user_type_combo";
+            this.user_type_combo.Size = new System.Drawing.Size(121, 21);
+            this.user_type_combo.TabIndex = 7;
+            // 
+            // registerBtn
+            // 
+            this.registerBtn.ForeColor = System.Drawing.Color.Black;
+            this.registerBtn.Location = new System.Drawing.Point(179, 336);
+            this.registerBtn.Name = "registerBtn";
+            this.registerBtn.Size = new System.Drawing.Size(75, 23);
+            this.registerBtn.TabIndex = 8;
+            this.registerBtn.Text = "Register";
+            this.registerBtn.UseVisualStyleBackColor = true;
+            this.registerBtn.Click += new System.EventHandler(this.Register_Button_Click);
             // 
             // label6
             // 
@@ -177,46 +231,6 @@
             this.label6.TabIndex = 11;
             this.label6.Text = "Registration Form";
             // 
-            // user_type_combo
-            // 
-            this.user_type_combo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.user_type_combo.FormattingEnabled = true;
-            this.user_type_combo.Location = new System.Drawing.Point(133, 292);
-            this.user_type_combo.Name = "user_type_combo";
-            this.user_type_combo.Size = new System.Drawing.Size(121, 21);
-            this.user_type_combo.TabIndex = 7;
-            // 
-            // gender_label
-            // 
-            this.gender_label.AutoSize = true;
-            this.gender_label.Location = new System.Drawing.Point(17, 248);
-            this.gender_label.Name = "gender_label";
-            this.gender_label.Size = new System.Drawing.Size(42, 13);
-            this.gender_label.TabIndex = 12;
-            this.gender_label.Text = "Gender";
-            // 
-            // male_radio_btn
-            // 
-            this.male_radio_btn.AutoSize = true;
-            this.male_radio_btn.Location = new System.Drawing.Point(141, 248);
-            this.male_radio_btn.Name = "male_radio_btn";
-            this.male_radio_btn.Size = new System.Drawing.Size(48, 17);
-            this.male_radio_btn.TabIndex = 5;
-            this.male_radio_btn.TabStop = true;
-            this.male_radio_btn.Text = "Male";
-            this.male_radio_btn.UseVisualStyleBackColor = true;
-            // 
-            // female_radio_btn
-            // 
-            this.female_radio_btn.AutoSize = true;
-            this.female_radio_btn.Location = new System.Drawing.Point(195, 248);
-            this.female_radio_btn.Name = "female_radio_btn";
-            this.female_radio_btn.Size = new System.Drawing.Size(59, 17);
-            this.female_radio_btn.TabIndex = 6;
-            this.female_radio_btn.TabStop = true;
-            this.female_radio_btn.Text = "Female";
-            this.female_radio_btn.UseVisualStyleBackColor = true;
-            // 
             // Registration_form
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -225,7 +239,6 @@
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.registration_detail_group);
-            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Registration_form";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Registration Form";
@@ -251,11 +264,12 @@
         private System.Windows.Forms.TextBox confirm_password_txt_box;
         private System.Windows.Forms.GroupBox registration_detail_group;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button registerBtn;
         private System.Windows.Forms.ComboBox user_type_combo;
         private System.Windows.Forms.RadioButton female_radio_btn;
         private System.Windows.Forms.RadioButton male_radio_btn;
         private System.Windows.Forms.Label gender_label;
+        private System.Windows.Forms.LinkLabel loginlabel;
     }
 }
 

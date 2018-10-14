@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Data;
 using System.Linq;
+
 using System.Configuration;
 using System.Data.SqlClient;
 using System.Windows.Forms;
@@ -9,12 +10,10 @@ namespace LibraryManagementSystem
 {
     public partial class Registration_form : Form
     {
-        
         SqlConnection conn = new SqlConnection("Data Source=HASNAIN\\HASNAINDB;Initial Catalog=library_management_db;User ID=sa;Password=hasnaindb123");
         public Registration_form()
         {
             InitializeComponent();
-          
             
         }
         private void Registration_form_Load(object sender, EventArgs e)
@@ -39,45 +38,35 @@ namespace LibraryManagementSystem
        
         private void Submit_btn(object sender, EventArgs e)
         {
-            
-            
+
+
             try
             {
-                if (conn.State == ConnectionState.Closed)
+                if (conn.State != ConnectionState.Open)
                 {
                     conn.Open();
-                   // MessageBox.Show("Connection Have been made");// delete it after success
-                    if(conn.State == ConnectionState.Open)
-                    {
-                        try
-                        {
-                            
-                            string Query = "insert into user_registration_tbl (name,email,phone_no,password,type_combo_box , gender , user_register_date_time) values ('" + name_txt_box.Text + "','" + email_txt_box.Text + "','" + phone_no_txt_box.Text + "','" + password_txt_box.Text + "' , '" + Convert.ToInt32(user_type_combo.SelectedValue) + "' , '" + Getgender() +"','" + DateTime.Now.ToString() + "')";
+                 
 
+                        string Query = "insert into user_registration_tbl (name,email,phone_no,password,type_combo_box , gender , user_register_date_time) values ('" + name_txt_box.Text + "','" + email_txt_box.Text + "','" + phone_no_txt_box.Text + "','" + password_txt_box.Text + "' , '" + Convert.ToInt32(user_type_combo.SelectedValue) + "' , '" + Getgender() + "','" + DateTime.Now.ToString() + "')";
+                        SqlDataAdapter sda = new SqlDataAdapter(Query, conn);
+                        sda.SelectCommand.ExecuteNonQuery();
+                        MessageBox.Show("User registerd successfully");
+                    conn.Close();
+                    login_form login = new login_form();
+                    login.Show();
+                   // this.Visible = false;
+                       
 
-                            SqlDataAdapter sda = new SqlDataAdapter(Query, conn);
-                            sda.SelectCommand.ExecuteNonQuery();
-                            MessageBox.Show("User registerd successfully");
-                            login_form login = new login_form();
-                            login.Show();
-                            this.Hide();
-                            
-
-                            
-                            conn.Close();
-                        }
-                        catch (Exception ex)
-                        {
-
-                            MessageBox.Show(ex.Message);
-                        }
-                    }
                 }
             }
             catch (Exception ex)
             {
 
                 MessageBox.Show(ex.Message);
+                
+            }
+            finally
+            {
                 conn.Close();
             }
         }
@@ -96,6 +85,19 @@ namespace LibraryManagementSystem
                 return 0;
             }
         }
-        
+
+        private void Loginlabel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            login_form login_form = new login_form();
+            login_form.Show();
+            this.Hide();
+        }
+
+        private void Registration_form_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            
+            MessageBox.Show("Form has been closed");
+            
+        }
     }
 }

@@ -77,6 +77,7 @@
             // 
             this.password_txt.Location = new System.Drawing.Point(127, 100);
             this.password_txt.Name = "password_txt";
+            this.password_txt.PasswordChar = '*';
             this.password_txt.Size = new System.Drawing.Size(100, 20);
             this.password_txt.TabIndex = 3;
             // 
@@ -121,19 +122,18 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.ResumeLayout(false);
-            this.Load += new System.EventHandler(this.Login_form_Load);
-            this.Text = "login_form";
-            this.Name = "login_form";
-
             this.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.register_link);
             this.Controls.Add(this.Login_group);
+            this.Name = "login_form";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "login_form";
+            this.Load += new System.EventHandler(this.Login_form_Load);
             this.Login_group.ResumeLayout(false);
             this.Login_group.PerformLayout();
+            this.ResumeLayout(false);
             this.PerformLayout();
 
         }
