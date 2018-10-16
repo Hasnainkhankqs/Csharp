@@ -47,11 +47,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="maybeDeleted.cs">
+    <Compile Include="admin_panal.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="maybeDeleted.Designer.cs">
-      <DependentUpon>maybeDeleted.cs</DependentUpon>
+    <Compile Include="admin_panal.Designer.cs">
+      <DependentUpon>admin_panal.cs</DependentUpon>
     </Compile>
     <Compile Include="checking.cs">
       <SubType>Form</SubType>
@@ -78,11 +78,11 @@
     <Compile Include="Login_form.Designer.cs">
       <DependentUpon>Login_form.cs</DependentUpon>
     </Compile>
-    <Compile Include="adminPanal.cs">
+    <Compile Include="All_registered_users.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="adminPanal.Designer.cs">
-      <DependentUpon>adminPanal.cs</DependentUpon>
+    <Compile Include="All_registered_users.Designer.cs">
+      <DependentUpon>All_registered_users.cs</DependentUpon>
     </Compile>
     <Compile Include="Registration_form.cs">
       <SubType>Form</SubType>
@@ -104,11 +104,14 @@
     <Compile Include="user_profile_form.Designer.cs">
       <DependentUpon>user_profile_form.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="maybeDeleted.resx">
-      <DependentUpon>maybeDeleted.cs</DependentUpon>
+    <EmbeddedResource Include="admin_panal.resx">
+      <DependentUpon>admin_panal.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="checking.resx">
       <DependentUpon>checking.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Librarian_form.resx">
+      <DependentUpon>Librarian_form.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Login_form.resx">
       <DependentUpon>Login_form.cs</DependentUpon>
@@ -122,8 +125,8 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="adminPanal.resx">
-      <DependentUpon>adminPanal.cs</DependentUpon>
+    <EmbeddedResource Include="All_registered_users.resx">
+      <DependentUpon>All_registered_users.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Registration_form.resx">
       <DependentUpon>Registration_form.cs</DependentUpon>

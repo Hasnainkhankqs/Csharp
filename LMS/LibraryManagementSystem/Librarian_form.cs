@@ -16,5 +16,17 @@ namespace LibraryManagementSystem
         {
             InitializeComponent();
         }
+
+        private void Librarian_form_Load(object sender, EventArgs e)
+        {
+            if(login_form.getemail != null)
+            {
+                librarain_txt.Text = login_form.getemail;
+            }
+            else
+            {
+                librarain_txt.Text = Registration_form.getemail;
+            }
+        }
     }
 }

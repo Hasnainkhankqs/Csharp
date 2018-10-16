@@ -10,7 +10,8 @@ namespace LibraryManagementSystem
 {
     public partial class login_form : Form
     {
-        public static string getemail;
+        public static string getemail = null;
+        
         private string ConnectionString = ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString;
         private SqlConnection conn = null;
         private SqlCommand cmd = null;
@@ -28,7 +29,7 @@ namespace LibraryManagementSystem
             using (conn = new SqlConnection(ConnectionString))
             {
                 User_profile_form profile = new User_profile_form();
-                profile.name_lbl.Text = email_txt.Text;
+                profile.email_lbl.Text = email_txt.Text;
             }
            
         }
@@ -87,6 +88,10 @@ namespace LibraryManagementSystem
                         else if (columnValue == 2)
                         {
                             MessageBox.Show("Librarian");
+                            th = new Thread(OpenLibrarianForm);
+                            th.SetApartmentState(ApartmentState.STA);
+                            th.Start();
+                            this.Close();
                         }
                         else if (columnValue == 3)
                         {
@@ -141,8 +146,6 @@ namespace LibraryManagementSystem
             th.SetApartmentState(ApartmentState.STA);
             th.Start();
             this.Close();
-
-
         }
 
 
@@ -151,7 +154,7 @@ namespace LibraryManagementSystem
         #region form opening methods
         private void OpenAdminForm()
         {
-            Application.Run(new maybeDeleted());
+            Application.Run(new Admin_panal());
         }
         private void OpenRegistrationForm()
         {
@@ -166,13 +169,18 @@ namespace LibraryManagementSystem
         {
             Application.Run(new Secratary_form());
         }
-       
-        
+        private void OpenLibrarianForm()
+        {
+            Application.Run(new Librarian_form());
+        }
+
+
+
         #endregion
 
     }
 
-   
-   
+
+
 }
 

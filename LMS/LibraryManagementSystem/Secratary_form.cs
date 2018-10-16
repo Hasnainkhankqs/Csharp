@@ -20,7 +20,14 @@ namespace LibraryManagementSystem
         private void Secratary_form_Load(object sender, EventArgs e)
         {
             LoadCategoryy();
-           
+            if (login_form.getemail != null)
+            {
+                secratray_lbl.Text = login_form.getemail;
+            }
+            else
+            {
+                secratray_lbl.Text = Registration_form.getemail;
+            }
         }
 
        

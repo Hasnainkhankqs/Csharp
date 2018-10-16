@@ -28,12 +28,59 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.librarain_txt = new System.Windows.Forms.Label();
+            this.SuspendLayout();
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(39, 156);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(206, 33);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Librarian Form";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(415, 28);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(95, 13);
+            this.label2.TabIndex = 1;
+            this.label2.Text = "Welcome Librarian";
+            // 
+            // librarain_txt
+            // 
+            this.librarain_txt.AutoSize = true;
+            this.librarain_txt.Location = new System.Drawing.Point(635, 28);
+            this.librarain_txt.Name = "librarain_txt";
+            this.librarain_txt.Size = new System.Drawing.Size(63, 13);
+            this.librarain_txt.TabIndex = 2;
+            this.librarain_txt.Text = "changeable";
+            // 
+            // Librarian_form
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.librarain_txt);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label1);
+            this.Name = "Librarian_form";
             this.Text = "Librarian_form";
+            this.Load += new System.EventHandler(this.Librarian_form_Load);
+            this.ResumeLayout(false);
+            this.PerformLayout();
+
         }
 
         #endregion
+
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
+        public System.Windows.Forms.Label librarain_txt;
     }
 }

@@ -10,7 +10,7 @@ namespace LibraryManagementSystem
     public partial class Registration_form : Form
     {
 
-        public static string getemail;
+        public static string getemail = null;
         private string ConnectionString = ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString;
         private SqlConnection conn = null;
         private SqlCommand cmd = null;
@@ -26,6 +26,7 @@ namespace LibraryManagementSystem
         private void Registration_form_Load(object sender, EventArgs e)
         {
             Get_user_type_Data();
+           
         }
 
         public int user_id = 0;
@@ -98,6 +99,10 @@ namespace LibraryManagementSystem
                                 else if (columnValue == 2)
                                 {
                                     MessageBox.Show("Librarian");
+                                    th = new Thread(OpenLibrarianForm);
+                                    th.SetApartmentState(ApartmentState.STA);
+                                    th.Start();
+                                    this.Close();
                                 }
                                 else if (columnValue == 3)
                                 {
@@ -170,7 +175,7 @@ namespace LibraryManagementSystem
         #region make fields clear after inserting data
         private void ClearFields()
         {
-            name_txt_box.Text = email_txt_box.Text = phone_no_txt_box.Text = password_txt_box.Text
+            name_txt_box.Text  = phone_no_txt_box.Text = password_txt_box.Text
                 = confirm_password_txt_box.Text = "";
             male_radio_btn.TabStop = false;
             female_radio_btn.TabStop = false;
@@ -354,7 +359,7 @@ namespace LibraryManagementSystem
         #region form opening methods
         private void OpenAdminForm()
         {
-            Application.Run(new Registered_users());
+            Application.Run(new Admin_panal());
         }
         private void OpenRegistrationForm()
         {
@@ -368,6 +373,10 @@ namespace LibraryManagementSystem
         private void OpenSecrataryForm()
         {
             Application.Run(new Secratary_form());
+        }
+        private void OpenLibrarianForm()
+        {
+            Application.Run(new Librarian_form());
         }
 
 

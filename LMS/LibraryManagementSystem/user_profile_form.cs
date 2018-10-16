@@ -17,6 +17,8 @@ namespace LibraryManagementSystem
         private string ConnectionString = ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString;
         private SqlConnection conn = null;
         private SqlCommand cmd = null;
+        int user_id = 0;
+        int item_counting ;
         public User_profile_form()
         {
             InitializeComponent();
@@ -25,10 +27,146 @@ namespace LibraryManagementSystem
         
         private void User_profile_form_Load(object sender, EventArgs e)
         {
+             remaining_count.Text = Convert.ToString("You have selected " + 0 +" /5 ");
             LoadCategory();
-            name_lbl.Text = login_form.getemail;// ruko check krta hun
+          //  Load_basic_info();
+            using (conn = new SqlConnection(ConnectionString))
+            {
+                try
+                {
+                    conn.Open();
+
+                    string Query = "select * FROM user_registration_tbl WHERE email = @email";
+                    cmd = new SqlCommand(Query, conn);
+
+                    cmd.Parameters.AddWithValue("@email", "tayyab@gmail.com");
+                    SqlDataReader dr = cmd.ExecuteReader();
+                    while (dr.Read())
+                    {
+                        user_id = Convert.ToInt32(dr["user_id"]);
+                        name_lbl.Text = Convert.ToString(dr["name"]);
+                        email_lbl.Text = Convert.ToString(dr["email"]);
+                        phone_no_lbl.Text = Convert.ToString(dr["phone_no"]);
+                    }
+
+                   
+                }
+                catch (Exception ex)
+                {
+
+                    MessageBox.Show(ex.Message);
+                }
+            }
         }
 
+        
+            
+        private void Loan_itm_btn_Click(object sender, EventArgs e)
+        {
+            using (conn = new SqlConnection(ConnectionString))
+            {
+                conn.Open();
+                string count = "select item_count from loan_tbl where user_id = @user_id";
+                cmd = new SqlCommand(count, conn);
+                cmd.Parameters.AddWithValue("@user_id", user_id);
+                SqlDataReader dr = cmd.ExecuteReader();
+                while (dr.Read())
+                {
+                    item_counting = Convert.ToInt32(dr["item_count"]);
+
+                }
+            }
+            if (item_counting < 5)
+            {
+                
+                item_counting++;
+               
+                using (conn = new SqlConnection(ConnectionString))
+                {
+                    if (Convert.ToInt32(item_combo.SelectedValue) != 0)
+                    {
+                        conn.Open();
+
+                        string query = "insert into loan_tbl (user_id,item_id,item_count,loan_date,category_id) values  (@user_id ,  @item_id, @item_counting,@loan_date,@category_id)";
+                        cmd = new SqlCommand(query, conn);
+                        cmd.Parameters.AddWithValue("@user_id", user_id);
+                        cmd.Parameters.AddWithValue("@item_id", Convert.ToInt32(item_combo.SelectedValue));
+                        cmd.Parameters.AddWithValue("@item_counting", item_counting);
+                        cmd.Parameters.AddWithValue("@loan_date", DateTime.Now.ToString());
+                        cmd.Parameters.AddWithValue("@category_id", Convert.ToInt32(catagory_combo.SelectedValue));
+                        int row = cmd.ExecuteNonQuery();
+
+                        if (row > 0)
+                        {
+                            MessageBox.Show("added successfully");
+                            remaining_count.Text = Convert.ToString("You have selected " + item_counting + " /5 ");
+                        }
+                        else
+                        {
+                            MessageBox.Show("Not added");
+                        } 
+                    }
+                    else
+                    {
+                        MessageBox.Show("Please Select Category First");
+                        item_counting = 0;
+                    }
+
+                }
+                
+            }
+            else
+            {
+                MessageBox.Show("You can not book more than 5 items");
+            }
+            /*
+           */
+
+            
+        }
+
+        
+
+        private void Catagory_combo_DropDownClosed(object sender, EventArgs e)
+        {
+            ItemLoad();
+        }
+
+        
+
+
+        #region load item on select combo box event
+        public void ItemLoad()
+        {
+            string selectedCatagory_id = Convert.ToString(catagory_combo.SelectedValue);
+            using (conn = new SqlConnection(ConnectionString))
+            {
+                try
+                {
+
+                    //Fill the DataTable with records from Table.
+                    string Query = "select * from item_tbl where category_name = " + selectedCatagory_id;
+                    SqlDataAdapter sda = new SqlDataAdapter(Query, conn);
+                    DataTable dt = new DataTable();
+
+                    sda.Fill(dt);
+
+                    item_combo.DataSource = dt;
+                    item_combo.DisplayMember = "item_name";
+                    item_combo.ValueMember = "item_id";
+
+
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+            }
+        }
+        #endregion
+
+
+        #region Load item Category
         public void LoadCategory()
         {
             using (conn = new SqlConnection(ConnectionString))
@@ -62,60 +200,55 @@ namespace LibraryManagementSystem
                 }
             }
         }
-            
-        private void Loan_itm_btn_Click(object sender, EventArgs e)
-        {
-            using (conn = new SqlConnection(ConnectionString))
-            {
-             /*   conn.Open();
-                string query = "insert into item_tbl (category_name, item_name,item_added_date) values  (@category_id ,  @item_name, @date)";
-                cmd = new SqlCommand(query, conn);
-                cmd.Parameters.AddWithValue("@category_id", Convert.ToInt32(Category_combo.SelectedValue));
-                cmd.Parameters.AddWithValue("@item_name", item_name_txt.Text);
-                cmd.Parameters.AddWithValue("@date", DateTime.Now.ToString());
-                int row = cmd.ExecuteNonQuery();
-                if (row > 0)
-                {
-                    MessageBox.Show("added successfully");
-                }
-                else
-                {
-                    MessageBox.Show("Not added");
-                }
-                */
-            }
-        }
+        #endregion
 
-        
 
-        private void Catagory_combo_DropDownClosed(object sender, EventArgs e)
+        #region load user basic info // user id yad rakhna
+        public void Load_basic_info()
         {
-            string selectedCatagory_id = Convert.ToString(catagory_combo.SelectedValue);
             using (conn = new SqlConnection(ConnectionString))
             {
                 try
                 {
-
-                    //Fill the DataTable with records from Table.
-                    string Query = "select * from item_tbl where category_name = " + selectedCatagory_id;
-                    SqlDataAdapter sda = new SqlDataAdapter(Query, conn);
-                    DataTable dt = new DataTable();
-
-                    sda.Fill(dt);
-
-                    item_combo.DataSource = dt;
-                    item_combo.DisplayMember = "item_name";
-                    item_combo.ValueMember = "item_id";
+                    conn.Open();
+                    string Query = "select * FROM user_registration_tbl WHERE email = @email";
+                    cmd = new SqlCommand(Query, conn);
 
 
+                    if (login_form.getemail != null)
+                    {
+
+                        cmd.Parameters.AddWithValue("@email", login_form.getemail);
+                        SqlDataReader dr = cmd.ExecuteReader();
+                        while (dr.Read())
+                        {
+                           user_id = Convert.ToInt32(dr["user_id"]);
+                            name_lbl.Text = Convert.ToString(dr["name"]);
+                            email_lbl.Text = Convert.ToString(dr["email"]);
+                            phone_no_lbl.Text = Convert.ToString(dr["phone_no"]);
+                        }
+                    }
+                    else
+                    {
+
+                        cmd.Parameters.AddWithValue("@email", Registration_form.getemail);
+                        SqlDataReader dr = cmd.ExecuteReader();
+                        while (dr.Read())
+                        {
+                            user_id = Convert.ToInt32(dr["user_id"]);
+                            name_lbl.Text = Convert.ToString(dr["name"]);
+                            email_lbl.Text = Convert.ToString(dr["email"]);
+                            phone_no_lbl.Text = Convert.ToString(dr["phone_no"]);
+                        }
+                    }
                 }
                 catch (Exception ex)
                 {
+
                     MessageBox.Show(ex.Message);
                 }
             }
-           
         }
-       
+        #endregion
     }
 }
