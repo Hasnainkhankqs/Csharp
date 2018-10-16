@@ -164,7 +164,7 @@
             this.loginlabel.Location = new System.Drawing.Point(130, 341);
             this.loginlabel.Name = "loginlabel";
             this.loginlabel.Size = new System.Drawing.Size(33, 13);
-            this.loginlabel.TabIndex = 12;
+            this.loginlabel.TabIndex = 9;
             this.loginlabel.TabStop = true;
             this.loginlabel.Text = "Login";
             this.loginlabel.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.Loginlabel_LinkClicked);
@@ -176,7 +176,6 @@
             this.female_radio_btn.Name = "female_radio_btn";
             this.female_radio_btn.Size = new System.Drawing.Size(59, 17);
             this.female_radio_btn.TabIndex = 6;
-            this.female_radio_btn.TabStop = false;
             this.female_radio_btn.Text = "Female";
             this.female_radio_btn.UseVisualStyleBackColor = true;
             // 
@@ -187,7 +186,6 @@
             this.male_radio_btn.Name = "male_radio_btn";
             this.male_radio_btn.Size = new System.Drawing.Size(48, 17);
             this.male_radio_btn.TabIndex = 5;
-            this.male_radio_btn.TabStop = false;
             this.male_radio_btn.Text = "Male";
             this.male_radio_btn.UseVisualStyleBackColor = true;
             // 

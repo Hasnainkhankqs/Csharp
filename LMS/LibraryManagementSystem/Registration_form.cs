@@ -23,12 +23,15 @@ namespace LibraryManagementSystem
         // form loading with populated user type combobox
         private void Registration_form_Load(object sender, EventArgs e)
         {
-            get_user_type_Data();
+            Get_user_type_Data();
         }
         
        
         private void Register_Button_Click(object sender, EventArgs e)
         {
+            // making name email to lowerCase and deleting extra white spaces between them
+            string nameTxt = name_txt_box.Text.ToLower().Trim();
+            string emailTxt = email_txt_box.Text.ToLower().Trim();
 
             if(FormValidation() != false)
             {
@@ -39,7 +42,7 @@ namespace LibraryManagementSystem
                     {
                       
                         cmd = new SqlCommand("Select user_id from user_registration_tbl where email = @email", conn);
-                        cmd.Parameters.AddWithValue("@email", email_txt_box.Text);
+                        cmd.Parameters.AddWithValue("@email", emailTxt);
                         conn.Open();
 
                         var nId = cmd.ExecuteScalar();
@@ -56,11 +59,11 @@ namespace LibraryManagementSystem
                             //we can use like this
                             SqlParameter pram = new SqlParameter();
                             pram.ParameterName = "@nameDB";
-                            pram.Value = name_txt_box.Text;
+                            pram.Value = nameTxt;
                             cmd.Parameters.Add(pram);
                             //we can use like this end
                             //or we can use like this
-                            cmd.Parameters.AddWithValue("@emailDB", email_txt_box.Text.Trim());
+                            cmd.Parameters.AddWithValue("@emailDB", emailTxt);
                             cmd.Parameters.AddWithValue("@phone_noDB", phone_no_txt_box.Text.Trim());
                             cmd.Parameters.AddWithValue("@passwordDB", password_txt_box.Text.Trim());
                             cmd.Parameters.AddWithValue("@type_combo_boxDB", Convert.ToInt32(user_type_combo.SelectedValue));
@@ -104,12 +107,12 @@ namespace LibraryManagementSystem
         {
             
            
-            th = new Thread(openLoginForm);
+            th = new Thread(OpenLoginForm);
             th.SetApartmentState(ApartmentState.STA);
             th.Start();
             this.Close();
         }
-        private void openLoginForm()
+        private void OpenLoginForm()
         {
             Application.Run(new login_form());
         }
@@ -207,7 +210,7 @@ namespace LibraryManagementSystem
 
         #region fill combobox with user_type
 
-        public void get_user_type_Data()
+        public void Get_user_type_Data()
         {
             using (conn = new SqlConnection(ConnectionString))
             {
