@@ -151,7 +151,7 @@ namespace LibraryManagementSystem
         #region form opening methods
         private void OpenAdminForm()
         {
-            Application.Run(new admin_panal());
+            Application.Run(new maybeDeleted());
         }
         private void OpenRegistrationForm()
         {

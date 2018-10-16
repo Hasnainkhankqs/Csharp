@@ -9,6 +9,8 @@ namespace LibraryManagementSystem
 {
     public partial class Registration_form : Form
     {
+
+        public static string getemail;
         private string ConnectionString = ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString;
         private SqlConnection conn = null;
         private SqlCommand cmd = null;
@@ -25,10 +27,12 @@ namespace LibraryManagementSystem
         {
             Get_user_type_Data();
         }
-        
-       
+
+        public int user_id = 0;
         private void Register_Button_Click(object sender, EventArgs e)
         {
+            
+            // MessageBox.Show(Convert.ToString(user_type_combo.SelectedValue));
             // making name email to lowerCase and deleting extra white spaces between them
             string nameTxt = name_txt_box.Text.ToLower().Trim();
             string emailTxt = email_txt_box.Text.ToLower().Trim();
@@ -69,12 +73,56 @@ namespace LibraryManagementSystem
                             cmd.Parameters.AddWithValue("@type_combo_boxDB", Convert.ToInt32(user_type_combo.SelectedValue));
                             cmd.Parameters.AddWithValue("@genderDB", Getgender());
                             cmd.Parameters.AddWithValue("@user_register_date_timeDB", DateTime.Now.ToString());
-
+                           
                             int row = cmd.ExecuteNonQuery();
                             if (row > 0)
                             {
+                            
                                 MessageBox.Show("user registerd","Registerd",MessageBoxButtons.OK,MessageBoxIcon.Asterisk);
                                 ClearFields();
+
+                                int columnValue = 0;
+                                columnValue = Convert.ToInt32(user_type_combo.SelectedValue);
+
+                                getemail = email_txt_box.Text;
+
+
+                                if (columnValue == 1)
+                                {
+                                    th = new Thread(OpenAdminForm);
+                                    th.SetApartmentState(ApartmentState.STA);
+                                    th.Start();
+                                    this.Close();
+
+                                }
+                                else if (columnValue == 2)
+                                {
+                                    MessageBox.Show("Librarian");
+                                }
+                                else if (columnValue == 3)
+                                {
+                                    MessageBox.Show("Secretary");
+
+                                    th = new Thread(OpenSecrataryForm);
+                                    th.SetApartmentState(ApartmentState.STA);
+                                    th.Start();
+                                    this.Close();
+                                }
+                                else if (columnValue == 4)
+                                {
+                                    MessageBox.Show("Member");
+                                    th = new Thread(OpenUserProfileForm);
+                                    th.SetApartmentState(ApartmentState.STA);
+                                    th.Start();
+                                    this.Close();
+
+                                }
+                                else
+                                {
+                                    MessageBox.Show("Bad Value in user type");
+                                }
+
+
                             }
                             else
                             {
@@ -124,7 +172,6 @@ namespace LibraryManagementSystem
         {
             name_txt_box.Text = email_txt_box.Text = phone_no_txt_box.Text = password_txt_box.Text
                 = confirm_password_txt_box.Text = "";
-            user_type_combo.Text = "Select user type";
             male_radio_btn.TabStop = false;
             female_radio_btn.TabStop = false;
 
@@ -304,7 +351,27 @@ namespace LibraryManagementSystem
      
         }
         #endregion
+        #region form opening methods
+        private void OpenAdminForm()
+        {
+            Application.Run(new Registered_users());
+        }
+        private void OpenRegistrationForm()
+        {
+            Application.Run(new Registration_form());
+        }
+        private void OpenUserProfileForm()
+        {
+            Application.Run(new User_profile_form());
 
-      
+        }
+        private void OpenSecrataryForm()
+        {
+            Application.Run(new Secratary_form());
+        }
+
+
+        #endregion
+
     }
 }

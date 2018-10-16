@@ -47,11 +47,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="admin_panal.cs">
+    <Compile Include="maybeDeleted.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="admin_panal.Designer.cs">
-      <DependentUpon>admin_panal.cs</DependentUpon>
+    <Compile Include="maybeDeleted.Designer.cs">
+      <DependentUpon>maybeDeleted.cs</DependentUpon>
     </Compile>
     <Compile Include="checking.cs">
       <SubType>Form</SubType>
@@ -78,11 +78,11 @@
     <Compile Include="Login_form.Designer.cs">
       <DependentUpon>Login_form.cs</DependentUpon>
     </Compile>
-    <Compile Include="registered_users.cs">
+    <Compile Include="adminPanal.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="registered_users.Designer.cs">
-      <DependentUpon>registered_users.cs</DependentUpon>
+    <Compile Include="adminPanal.Designer.cs">
+      <DependentUpon>adminPanal.cs</DependentUpon>
     </Compile>
     <Compile Include="Registration_form.cs">
       <SubType>Form</SubType>
@@ -104,8 +104,8 @@
     <Compile Include="user_profile_form.Designer.cs">
       <DependentUpon>user_profile_form.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="admin_panal.resx">
-      <DependentUpon>admin_panal.cs</DependentUpon>
+    <EmbeddedResource Include="maybeDeleted.resx">
+      <DependentUpon>maybeDeleted.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="checking.resx">
       <DependentUpon>checking.cs</DependentUpon>
@@ -122,8 +122,8 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="registered_users.resx">
-      <DependentUpon>registered_users.cs</DependentUpon>
+    <EmbeddedResource Include="adminPanal.resx">
+      <DependentUpon>adminPanal.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Registration_form.resx">
       <DependentUpon>Registration_form.cs</DependentUpon>
