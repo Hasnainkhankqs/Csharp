@@ -50,8 +50,9 @@
             // 
             // Login_group
             // 
-            this.Login_group.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.Login_group.BackColor = System.Drawing.SystemColors.GrayText;
             this.Login_group.Controls.Add(this.login_btn);
+            this.Login_group.Controls.Add(this.register_link);
             this.Login_group.Controls.Add(this.password_txt);
             this.Login_group.Controls.Add(this.email_txt);
             this.Login_group.Controls.Add(this.password_label);
@@ -62,9 +63,11 @@
             this.Login_group.TabIndex = 1;
             this.Login_group.TabStop = false;
             this.Login_group.Text = "Login Info";
+            this.Login_group.ForeColor = System.Drawing.Color.White;
             // 
             // login_btn
             // 
+            this.login_btn.ForeColor = System.Drawing.Color.Black;
             this.login_btn.Location = new System.Drawing.Point(152, 156);
             this.login_btn.Name = "login_btn";
             this.login_btn.Size = new System.Drawing.Size(75, 23);
@@ -100,7 +103,7 @@
             // register_link
             // 
             this.register_link.AutoSize = true;
-            this.register_link.Location = new System.Drawing.Point(657, 296);
+            this.register_link.Location = new System.Drawing.Point(75, 166);
             this.register_link.Name = "register_link";
             this.register_link.Size = new System.Drawing.Size(71, 13);
             this.register_link.TabIndex = 5;
@@ -122,11 +125,11 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.BackColor = System.Drawing.SystemColors.GrayText;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.register_link);
             this.Controls.Add(this.Login_group);
+            this.ForeColor = System.Drawing.Color.Cornsilk;
             this.Name = "login_form";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "login_form";

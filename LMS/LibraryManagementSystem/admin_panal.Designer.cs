@@ -103,16 +103,18 @@
             this.admin_name_lbl.TabIndex = 2;
             this.admin_name_lbl.Text = "Changeable";
             // 
-            // maybeDeleted
+            // Admin_panal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.GrayText;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.admin_name_lbl);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.menuStrip1);
+            this.ForeColor = System.Drawing.Color.Cornsilk;
             this.MainMenuStrip = this.menuStrip1;
-            this.Name = "maybeDeleted";
+            this.Name = "Admin_panal";
             this.Text = "admin_panal";
             this.Load += new System.EventHandler(this.MaybeDeleted_Load);
             this.menuStrip1.ResumeLayout(false);

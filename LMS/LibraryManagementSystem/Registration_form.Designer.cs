@@ -237,6 +237,7 @@
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.registration_detail_group);
+            this.ForeColor = System.Drawing.SystemColors.ControlText;
             this.Name = "Registration_form";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Registration Form";

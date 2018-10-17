@@ -22,7 +22,6 @@ D:\Csharp\LMS\LibraryManagementSystem\obj\Debug\LibraryManagementSystem.exe
 D:\Csharp\LMS\LibraryManagementSystem\obj\Debug\LibraryManagementSystem.pdb
 D:\Csharp\LMS\LibraryManagementSystem\obj\Debug\LibraryManagementSystem.user_profile_form.resources
 D:\Csharp\LMS\LibraryManagementSystem\obj\Debug\LibraryManagementSystem.Secratary_form.resources
-D:\Csharp\LMS\LibraryManagementSystem\obj\Debug\LibraryManagementSystem.checking.resources
 D:\Csharp\LMS\LibraryManagementSystem\obj\Debug\LibraryManagementSystem.admin_panal.resources
 D:\Csharp\LMS\LibraryManagementSystem\obj\Debug\LibraryManagementSystem.All_registered_users.resources
 D:\Csharp\LMS\LibraryManagementSystem\obj\Debug\LibraryManagementSystem.Librarian_form.resources

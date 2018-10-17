@@ -1,13 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace LibraryManagementSystem
@@ -30,8 +24,10 @@ namespace LibraryManagementSystem
            
             remaining_count.Text = Convert.ToString("You have selected " + 0 +" /5 ");
             LoadCategory();
-            Load_basic_info();
-           /* using (conn = new SqlConnection(ConnectionString))
+            
+          //  Load_basic_info();
+            //for checking purpose maybe delete
+            using (conn = new SqlConnection(ConnectionString))
             {
                 try
                 {
@@ -49,15 +45,16 @@ namespace LibraryManagementSystem
                         email_lbl.Text = Convert.ToString(dr["email"]);
                         phone_no_lbl.Text = Convert.ToString(dr["phone_no"]);
                     }
+                    LoanHistory(user_id);
+                    OverDues(user_id);
 
-                   
                 }
                 catch (Exception ex)
                 {
 
                     MessageBox.Show(ex.Message);
                 }
-            }*/
+            }
         }
 
         
@@ -82,7 +79,7 @@ namespace LibraryManagementSystem
                 
                 item_counting++;
 
-                if (LoanChecking() == true)
+                if (LoanChecking(user_id) == true)
                 {
                     using (conn = new SqlConnection(ConnectionString))
                     {
@@ -147,30 +144,7 @@ namespace LibraryManagementSystem
         }
 
         
-        public void Fine()
-        {
-            string query = "select * from loan_tbl where user_id = @user_id";
-            using (conn = new SqlConnection(ConnectionString))
-            {
-                conn.Open();
-                cmd = new SqlCommand(query,conn);
-                cmd.Parameters.AddWithValue("@user_id", user_id);
-                SqlDataReader dr = cmd.ExecuteReader();
-                while (dr.Read())
-                {
-                   DateTime da = Convert.ToDateTime(dr["loan_date"]);
-                    if(Convert.ToInt32(dr["category_id"]) == 1)
-                    {
-                       // if(DateTime() - da)
-                       // int totalWeekSec = 2419200;
-                    }
-                    else
-                    {
-
-                    }
-                }
-            }
-        }
+        
 
         #region load item on select combo box event
         public void ItemLoad()
@@ -290,15 +264,15 @@ namespace LibraryManagementSystem
 
 
         #region // checking loan
-        public bool LoanChecking()
+        public bool LoanChecking(int user_id)
         {
             using (conn = new SqlConnection(ConnectionString))
             {
                 try
                 {
                     conn.Open();
-                    //Fill the DataTable with records from Table.
-                    string Query = "select due_date from loan_tbl";
+                   
+                    string Query = "select due_date from loan_tbl where user_id = @user_id";
                     cmd = new SqlCommand(Query,conn);
                     SqlDataReader dr = cmd.ExecuteReader();
                     while (dr.Read())
@@ -324,5 +298,67 @@ namespace LibraryManagementSystem
             }
         }
         #endregion
+
+
+
+        #region
+        public void LoanHistory(int user_id)
+        {
+            using (conn = new SqlConnection(ConnectionString))
+            {
+                try
+                {
+                    conn.Open();
+                    string query = "select * from loan_tbl where user_id = @user_id";
+                    cmd = new SqlCommand(query,conn);
+                    cmd.Parameters.AddWithValue("@user_id",user_id);
+                    DataSet ds = new DataSet();
+                    DataTable dt = new DataTable();
+                    //ds.Tables["Loan History"];
+                    SqlDataAdapter da = new SqlDataAdapter(cmd);
+                    da.Fill(ds, "1");
+                    loan_history_grid_view.DataSource = ds.Tables["1"];
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                    
+                }
+            }
+        }
+
+
+
+
+        #endregion
+
+
+
+        public void OverDues(int user_id)
+        {
+            using (conn = new SqlConnection(ConnectionString))
+            {
+                try
+                {
+                    DateTime now = DateTime.Now;
+                    conn.Open();
+                    string query = "select * from loan_tbl where user_id = @user_id and due_date < @now" ;
+                    cmd = new SqlCommand(query, conn);
+                    cmd.Parameters.AddWithValue("@user_id", user_id);
+                    cmd.Parameters.AddWithValue("@now", now);
+                    DataSet ds = new DataSet();
+                    DataTable dt = new DataTable();
+                    
+                    SqlDataAdapter da = new SqlDataAdapter(cmd);
+                    da.Fill(ds, "loan_tbl");
+                    OverDues_gird_view.DataSource = ds.Tables["loan_tbl"];
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+
+                }
+            }
+        }
     }
 }

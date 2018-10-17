@@ -88,16 +88,17 @@
             this.cancelBtn.Text = "Cancel";
             this.cancelBtn.UseVisualStyleBackColor = true;
             // 
-            // Registered_users
+            // All_registered_users
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.GrayText;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.cancelBtn);
             this.Controls.Add(this.editBtn);
             this.Controls.Add(this.deleteBtn);
             this.Controls.Add(this.Registered_user_grid_view);
-            this.Name = "Registered_users";
+            this.Name = "All_registered_users";
             this.Text = "registered_users";
             this.Load += new System.EventHandler(this.Registered_users_Load);
             ((System.ComponentModel.ISupportInitialize)(this.Registered_user_grid_view)).EndInit();

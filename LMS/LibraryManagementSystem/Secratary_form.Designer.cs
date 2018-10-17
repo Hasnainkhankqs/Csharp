@@ -54,6 +54,7 @@
             // 
             // insert_item_btn
             // 
+            this.insert_item_btn.ForeColor = System.Drawing.Color.Gray;
             this.insert_item_btn.Location = new System.Drawing.Point(569, 182);
             this.insert_item_btn.Name = "insert_item_btn";
             this.insert_item_btn.Size = new System.Drawing.Size(75, 23);
@@ -94,6 +95,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.GrayText;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.secratray_lbl);
@@ -101,6 +103,7 @@
             this.Controls.Add(this.insert_item_btn);
             this.Controls.Add(this.item_name_txt);
             this.Controls.Add(this.Category_combo);
+            this.ForeColor = System.Drawing.Color.Cornsilk;
             this.Name = "Secratary_form";
             this.Text = "Secratary_form";
             this.Load += new System.EventHandler(this.Secratary_form_Load);
