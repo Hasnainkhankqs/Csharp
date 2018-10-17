@@ -27,10 +27,11 @@ namespace LibraryManagementSystem
         
         private void User_profile_form_Load(object sender, EventArgs e)
         {
-             remaining_count.Text = Convert.ToString("You have selected " + 0 +" /5 ");
+           
+            remaining_count.Text = Convert.ToString("You have selected " + 0 +" /5 ");
             LoadCategory();
-          //  Load_basic_info();
-            using (conn = new SqlConnection(ConnectionString))
+            Load_basic_info();
+           /* using (conn = new SqlConnection(ConnectionString))
             {
                 try
                 {
@@ -56,7 +57,7 @@ namespace LibraryManagementSystem
 
                     MessageBox.Show(ex.Message);
                 }
-            }
+            }*/
         }
 
         
@@ -80,38 +81,54 @@ namespace LibraryManagementSystem
             {
                 
                 item_counting++;
-               
-                using (conn = new SqlConnection(ConnectionString))
+
+                if (LoanChecking() == true)
                 {
-                    if (Convert.ToInt32(item_combo.SelectedValue) != 0)
+                    using (conn = new SqlConnection(ConnectionString))
                     {
-                        conn.Open();
-
-                        string query = "insert into loan_tbl (user_id,item_id,item_count,loan_date,category_id) values  (@user_id ,  @item_id, @item_counting,@loan_date,@category_id)";
-                        cmd = new SqlCommand(query, conn);
-                        cmd.Parameters.AddWithValue("@user_id", user_id);
-                        cmd.Parameters.AddWithValue("@item_id", Convert.ToInt32(item_combo.SelectedValue));
-                        cmd.Parameters.AddWithValue("@item_counting", item_counting);
-                        cmd.Parameters.AddWithValue("@loan_date", DateTime.Now.ToString());
-                        cmd.Parameters.AddWithValue("@category_id", Convert.ToInt32(catagory_combo.SelectedValue));
-                        int row = cmd.ExecuteNonQuery();
-
-                        if (row > 0)
+                        if (Convert.ToInt32(item_combo.SelectedValue) != 0)
                         {
-                            MessageBox.Show("added successfully");
-                            remaining_count.Text = Convert.ToString("You have selected " + item_counting + " /5 ");
+                            conn.Open();
+                            string item_due = "";
+                            string query = "insert into loan_tbl (user_id,item_id,item_count,loan_date,category_id ,due_date) values  (@user_id ,  @item_id, @item_counting,@loan_date,@category_id,@due_date)";
+                            cmd = new SqlCommand(query, conn);
+                            cmd.Parameters.AddWithValue("@user_id", user_id);
+                            cmd.Parameters.AddWithValue("@item_id", Convert.ToInt32(item_combo.SelectedValue));
+                            cmd.Parameters.AddWithValue("@item_counting", item_counting);
+                            cmd.Parameters.AddWithValue("@loan_date", DateTime.Now.ToString());
+                            cmd.Parameters.AddWithValue("@category_id", Convert.ToInt32(catagory_combo.SelectedValue));
+                            if (Convert.ToInt32(catagory_combo.SelectedValue) == 1)
+                            {
+                                item_due = DateTime.Now.AddDays(28).ToString();
+                            }
+                            else
+                            {
+                                item_due = DateTime.Now.AddDays(7).ToString();
+                            }
+                            cmd.Parameters.AddWithValue("@due_date", item_due);
+                            int row = cmd.ExecuteNonQuery();
+
+                            if (row > 0)
+                            {
+                                MessageBox.Show("added successfully");
+                                remaining_count.Text = Convert.ToString("You have selected " + item_counting + " /5 ");
+                            }
+                            else
+                            {
+                                MessageBox.Show("Not added");
+                            }
                         }
                         else
                         {
-                            MessageBox.Show("Not added");
-                        } 
-                    }
-                    else
-                    {
-                        MessageBox.Show("Please Select Category First");
-                        item_counting = 0;
-                    }
+                            MessageBox.Show("Please Select Category First");
+                            item_counting = 0;
+                        }
 
+                    } 
+                }
+                else
+                {
+                    MessageBox.Show("Your dues are not clear");
                 }
                 
             }
@@ -119,9 +136,6 @@ namespace LibraryManagementSystem
             {
                 MessageBox.Show("You can not book more than 5 items");
             }
-            /*
-           */
-
             
         }
 
@@ -133,7 +147,30 @@ namespace LibraryManagementSystem
         }
 
         
+        public void Fine()
+        {
+            string query = "select * from loan_tbl where user_id = @user_id";
+            using (conn = new SqlConnection(ConnectionString))
+            {
+                conn.Open();
+                cmd = new SqlCommand(query,conn);
+                cmd.Parameters.AddWithValue("@user_id", user_id);
+                SqlDataReader dr = cmd.ExecuteReader();
+                while (dr.Read())
+                {
+                   DateTime da = Convert.ToDateTime(dr["loan_date"]);
+                    if(Convert.ToInt32(dr["category_id"]) == 1)
+                    {
+                       // if(DateTime() - da)
+                       // int totalWeekSec = 2419200;
+                    }
+                    else
+                    {
 
+                    }
+                }
+            }
+        }
 
         #region load item on select combo box event
         public void ItemLoad()
@@ -247,6 +284,43 @@ namespace LibraryManagementSystem
 
                     MessageBox.Show(ex.Message);
                 }
+            }
+        }
+        #endregion
+
+
+        #region // checking loan
+        public bool LoanChecking()
+        {
+            using (conn = new SqlConnection(ConnectionString))
+            {
+                try
+                {
+                    conn.Open();
+                    //Fill the DataTable with records from Table.
+                    string Query = "select due_date from loan_tbl";
+                    cmd = new SqlCommand(Query,conn);
+                    SqlDataReader dr = cmd.ExecuteReader();
+                    while (dr.Read())
+                    {
+                        DateTime get_due_date = Convert.ToDateTime(dr["due_date"]);
+                        if(get_due_date < DateTime.Now)
+                        {
+                            return false;
+                        }
+                        else
+                        {
+                            return true;
+                        }
+                    }
+                    return true;
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+                return true;
+                
             }
         }
         #endregion
