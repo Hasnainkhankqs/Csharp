@@ -369,13 +369,13 @@ namespace LibraryManagementSystem
         }
         #endregion
 
-        private void loanHistoryToolStripMenuItem_Click(object sender, EventArgs e)
+        private void LoanHistoryToolStripMenuItem_Click(object sender, EventArgs e)
         {
             User_loan_history_form loan = new User_loan_history_form();
             loan.Show();
         }
 
-        private void dueDatesToolStripMenuItem_Click(object sender, EventArgs e)
+        private void DueDatesToolStripMenuItem_Click(object sender, EventArgs e)
         {
             User_dues_history_form dues = new User_dues_history_form();
             dues.Show();

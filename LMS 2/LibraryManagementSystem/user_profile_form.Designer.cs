@@ -245,7 +245,7 @@
             this.loanHistoryToolStripMenuItem.Name = "loanHistoryToolStripMenuItem";
             this.loanHistoryToolStripMenuItem.Size = new System.Drawing.Size(86, 20);
             this.loanHistoryToolStripMenuItem.Text = "Loan History";
-            this.loanHistoryToolStripMenuItem.Click += new System.EventHandler(this.loanHistoryToolStripMenuItem_Click);
+            this.loanHistoryToolStripMenuItem.Click += new System.EventHandler(this.LoanHistoryToolStripMenuItem_Click);
             // 
             // dueDatesToolStripMenuItem
             // 
@@ -253,7 +253,7 @@
             this.dueDatesToolStripMenuItem.Name = "dueDatesToolStripMenuItem";
             this.dueDatesToolStripMenuItem.Size = new System.Drawing.Size(72, 20);
             this.dueDatesToolStripMenuItem.Text = "Due Dates";
-            this.dueDatesToolStripMenuItem.Click += new System.EventHandler(this.dueDatesToolStripMenuItem_Click);
+            this.dueDatesToolStripMenuItem.Click += new System.EventHandler(this.DueDatesToolStripMenuItem_Click);
             // 
             // User_profile_form
             // 

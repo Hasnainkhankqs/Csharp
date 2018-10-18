@@ -53,6 +53,18 @@
     <Compile Include="admin_panal.Designer.cs">
       <DependentUpon>admin_panal.cs</DependentUpon>
     </Compile>
+    <Compile Include="For_librarian_pending_form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="For_librarian_pending_form.Designer.cs">
+      <DependentUpon>For_librarian_pending_form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="For_librarian_requests_form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="For_librarian_requests_form.Designer.cs">
+      <DependentUpon>For_librarian_requests_form.cs</DependentUpon>
+    </Compile>
     <Compile Include="gettingUserEmailClass.cs" />
     <Compile Include="Librarian_form.cs">
       <SubType>Form</SubType>
@@ -112,6 +124,12 @@
     </Compile>
     <EmbeddedResource Include="admin_panal.resx">
       <DependentUpon>admin_panal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="For_librarian_pending_form.resx">
+      <DependentUpon>For_librarian_pending_form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="For_librarian_requests_form.resx">
+      <DependentUpon>For_librarian_requests_form.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Librarian_form.resx">
       <DependentUpon>Librarian_form.cs</DependentUpon>
