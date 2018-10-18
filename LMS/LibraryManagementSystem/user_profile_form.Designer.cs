@@ -45,9 +45,13 @@
             this.OverDues_gird_view = new System.Windows.Forms.DataGridView();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.loanHistoryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.dueDatesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.loan_history_grid_view)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.OverDues_gird_view)).BeginInit();
+            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // catagory_combo
@@ -105,7 +109,7 @@
             this.remaining_count.AutoSize = true;
             this.remaining_count.BackColor = System.Drawing.Color.Cornsilk;
             this.remaining_count.ForeColor = System.Drawing.Color.Crimson;
-            this.remaining_count.Location = new System.Drawing.Point(605, 12);
+            this.remaining_count.Location = new System.Drawing.Point(567, 11);
             this.remaining_count.Name = "remaining_count";
             this.remaining_count.Size = new System.Drawing.Size(35, 13);
             this.remaining_count.TabIndex = 5;
@@ -130,7 +134,7 @@
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.email_lbl);
             this.groupBox1.ForeColor = System.Drawing.Color.White;
-            this.groupBox1.Location = new System.Drawing.Point(12, 12);
+            this.groupBox1.Location = new System.Drawing.Point(15, 100);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(200, 100);
             this.groupBox1.TabIndex = 8;
@@ -223,6 +227,34 @@
             this.label3.TabIndex = 12;
             this.label3.Text = "Over Dues";
             // 
+            // menuStrip1
+            // 
+            this.menuStrip1.BackColor = System.Drawing.SystemColors.WindowFrame;
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.loanHistoryToolStripMenuItem,
+            this.dueDatesToolStripMenuItem});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(800, 24);
+            this.menuStrip1.TabIndex = 13;
+            this.menuStrip1.Text = "menuStrip1";
+            // 
+            // loanHistoryToolStripMenuItem
+            // 
+            this.loanHistoryToolStripMenuItem.ForeColor = System.Drawing.SystemColors.MenuBar;
+            this.loanHistoryToolStripMenuItem.Name = "loanHistoryToolStripMenuItem";
+            this.loanHistoryToolStripMenuItem.Size = new System.Drawing.Size(86, 20);
+            this.loanHistoryToolStripMenuItem.Text = "Loan History";
+            this.loanHistoryToolStripMenuItem.Click += new System.EventHandler(this.loanHistoryToolStripMenuItem_Click);
+            // 
+            // dueDatesToolStripMenuItem
+            // 
+            this.dueDatesToolStripMenuItem.ForeColor = System.Drawing.SystemColors.MenuBar;
+            this.dueDatesToolStripMenuItem.Name = "dueDatesToolStripMenuItem";
+            this.dueDatesToolStripMenuItem.Size = new System.Drawing.Size(72, 20);
+            this.dueDatesToolStripMenuItem.Text = "Due Dates";
+            this.dueDatesToolStripMenuItem.Click += new System.EventHandler(this.dueDatesToolStripMenuItem_Click);
+            // 
             // User_profile_form
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -240,6 +272,8 @@
             this.Controls.Add(this.loan_itm_btn);
             this.Controls.Add(this.item_combo);
             this.Controls.Add(this.catagory_combo);
+            this.Controls.Add(this.menuStrip1);
+            this.MainMenuStrip = this.menuStrip1;
             this.Name = "User_profile_form";
             this.Text = "user_profile_form";
             this.Load += new System.EventHandler(this.User_profile_form_Load);
@@ -247,6 +281,8 @@
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.loan_history_grid_view)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.OverDues_gird_view)).EndInit();
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -271,5 +307,8 @@
         private System.Windows.Forms.DataGridView OverDues_gird_view;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem loanHistoryToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem dueDatesToolStripMenuItem;
     }
 }

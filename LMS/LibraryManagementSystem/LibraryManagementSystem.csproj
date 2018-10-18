@@ -92,6 +92,18 @@
     <Compile Include="Secratary_form.Designer.cs">
       <DependentUpon>Secratary_form.cs</DependentUpon>
     </Compile>
+    <Compile Include="User_dues_history_form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="User_dues_history_form.Designer.cs">
+      <DependentUpon>User_dues_history_form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="User_loan_history_form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="User_loan_history_form.Designer.cs">
+      <DependentUpon>User_loan_history_form.cs</DependentUpon>
+    </Compile>
     <Compile Include="user_profile_form.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -124,6 +136,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Secratary_form.resx">
       <DependentUpon>Secratary_form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="User_dues_history_form.resx">
+      <DependentUpon>User_dues_history_form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="User_loan_history_form.resx">
+      <DependentUpon>User_loan_history_form.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="user_profile_form.resx">
       <DependentUpon>user_profile_form.cs</DependentUpon>

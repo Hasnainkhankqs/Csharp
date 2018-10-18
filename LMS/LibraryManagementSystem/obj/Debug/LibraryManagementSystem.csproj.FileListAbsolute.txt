@@ -25,3 +25,5 @@ D:\Csharp\LMS\LibraryManagementSystem\obj\Debug\LibraryManagementSystem.Secratar
 D:\Csharp\LMS\LibraryManagementSystem\obj\Debug\LibraryManagementSystem.admin_panal.resources
 D:\Csharp\LMS\LibraryManagementSystem\obj\Debug\LibraryManagementSystem.All_registered_users.resources
 D:\Csharp\LMS\LibraryManagementSystem\obj\Debug\LibraryManagementSystem.Librarian_form.resources
+D:\Csharp\LMS\LibraryManagementSystem\obj\Debug\LibraryManagementSystem.User_dues_history_form.resources
+D:\Csharp\LMS\LibraryManagementSystem\obj\Debug\LibraryManagementSystem.User_loan_history_form.resources

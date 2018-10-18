@@ -24,41 +24,41 @@ namespace LibraryManagementSystem
            
             remaining_count.Text = Convert.ToString("You have selected " + 0 +" /5 ");
             LoadCategory();
-            
-          //  Load_basic_info();
+
+              Load_basic_info();
             //for checking purpose maybe delete
-            using (conn = new SqlConnection(ConnectionString))
-            {
-                try
-                {
-                    conn.Open();
+            /* using (conn = new SqlConnection(ConnectionString))
+             {
+                 try
+                 {
+                     conn.Open();
 
-                    string Query = "select * FROM user_registration_tbl WHERE email = @email";
-                    cmd = new SqlCommand(Query, conn);
+                     string Query = "select * FROM user_registration_tbl WHERE email = @email";
+                     cmd = new SqlCommand(Query, conn);
 
-                    cmd.Parameters.AddWithValue("@email", "tayyab@gmail.com");
-                    SqlDataReader dr = cmd.ExecuteReader();
-                    while (dr.Read())
-                    {
-                        user_id = Convert.ToInt32(dr["user_id"]);
-                        name_lbl.Text = Convert.ToString(dr["name"]);
-                        email_lbl.Text = Convert.ToString(dr["email"]);
-                        phone_no_lbl.Text = Convert.ToString(dr["phone_no"]);
-                    }
-                    LoanHistory(user_id);
-                    OverDues(user_id);
+                     cmd.Parameters.AddWithValue("@email", "tayyab@gmail.com");
+                     SqlDataReader dr = cmd.ExecuteReader();
+                     while (dr.Read())
+                     {
+                         user_id = Convert.ToInt32(dr["user_id"]);
+                         name_lbl.Text = Convert.ToString(dr["name"]);
+                         email_lbl.Text = Convert.ToString(dr["email"]);
+                         phone_no_lbl.Text = Convert.ToString(dr["phone_no"]);
+                     }
+                     LoanHistory(user_id, loan_history_grid_view);
+                     OverDues(user_id, OverDues_gird_view);
 
-                }
-                catch (Exception ex)
-                {
+                 }
+                 catch (Exception ex)
+                 {
 
-                    MessageBox.Show(ex.Message);
-                }
-            }
-        }
+                     MessageBox.Show(ex.Message);
+                 }
+             }*/
+        }// ending of User_profile_form_Load
 
-        
-            
+
+
         private void Loan_itm_btn_Click(object sender, EventArgs e)
         {
             using (conn = new SqlConnection(ConnectionString))
@@ -108,6 +108,8 @@ namespace LibraryManagementSystem
                             if (row > 0)
                             {
                                 MessageBox.Show("added successfully");
+                                LoanHistory(user_id, loan_history_grid_view);
+                                OverDues(user_id, OverDues_gird_view);
                                 remaining_count.Text = Convert.ToString("You have selected " + item_counting + " /5 ");
                             }
                             else
@@ -238,6 +240,8 @@ namespace LibraryManagementSystem
                             email_lbl.Text = Convert.ToString(dr["email"]);
                             phone_no_lbl.Text = Convert.ToString(dr["phone_no"]);
                         }
+                        LoanHistory(user_id, loan_history_grid_view);
+                        OverDues(user_id, OverDues_gird_view);
                     }
                     else
                     {
@@ -251,6 +255,8 @@ namespace LibraryManagementSystem
                             email_lbl.Text = Convert.ToString(dr["email"]);
                             phone_no_lbl.Text = Convert.ToString(dr["phone_no"]);
                         }
+                        LoanHistory(user_id, loan_history_grid_view);
+                        OverDues(user_id, OverDues_gird_view);
                     }
                 }
                 catch (Exception ex)
@@ -274,6 +280,7 @@ namespace LibraryManagementSystem
                    
                     string Query = "select due_date from loan_tbl where user_id = @user_id";
                     cmd = new SqlCommand(Query,conn);
+                    cmd.Parameters.AddWithValue("@user_id",user_id);
                     SqlDataReader dr = cmd.ExecuteReader();
                     while (dr.Read())
                     {
@@ -301,8 +308,8 @@ namespace LibraryManagementSystem
 
 
 
-        #region
-        public void LoanHistory(int user_id)
+        #region user LoanHistory
+        public void LoanHistory(int user_id, DataGridView x)
         {
             using (conn = new SqlConnection(ConnectionString))
             {
@@ -317,7 +324,7 @@ namespace LibraryManagementSystem
                     //ds.Tables["Loan History"];
                     SqlDataAdapter da = new SqlDataAdapter(cmd);
                     da.Fill(ds, "1");
-                    loan_history_grid_view.DataSource = ds.Tables["1"];
+                    x.DataSource = ds.Tables["1"];
                 }
                 catch (Exception ex)
                 {
@@ -332,9 +339,9 @@ namespace LibraryManagementSystem
 
         #endregion
 
+        #region user overdues
 
-
-        public void OverDues(int user_id)
+        public void  OverDues(int user_id,DataGridView x)
         {
             using (conn = new SqlConnection(ConnectionString))
             {
@@ -351,7 +358,7 @@ namespace LibraryManagementSystem
                     
                     SqlDataAdapter da = new SqlDataAdapter(cmd);
                     da.Fill(ds, "loan_tbl");
-                    OverDues_gird_view.DataSource = ds.Tables["loan_tbl"];
+                    x.DataSource = ds.Tables["loan_tbl"];
                 }
                 catch (Exception ex)
                 {
@@ -359,6 +366,19 @@ namespace LibraryManagementSystem
 
                 }
             }
+        }
+        #endregion
+
+        private void loanHistoryToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            User_loan_history_form loan = new User_loan_history_form();
+            loan.Show();
+        }
+
+        private void dueDatesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            User_dues_history_form dues = new User_dues_history_form();
+            dues.Show();
         }
     }
 }
