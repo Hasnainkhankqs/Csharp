@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.output_window = new System.Windows.Forms.TextBox();
             this.btn_cancel = new System.Windows.Forms.Button();
             this.btn_percent = new System.Windows.Forms.Button();
             this.btn_8 = new System.Windows.Forms.Button();
@@ -57,14 +57,13 @@
             this.btn_x_to_y = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // textBox2
+            // output_window
             // 
-            this.textBox2.Location = new System.Drawing.Point(15, 18);
-            this.textBox2.Multiline = true;
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(309, 43);
-            this.textBox2.TabIndex = 22;
-            this.textBox2.TextChanged += new System.EventHandler(this.TextBox2_TextChanged);
+            this.output_window.Location = new System.Drawing.Point(15, 18);
+            this.output_window.Multiline = true;
+            this.output_window.Name = "output_window";
+            this.output_window.Size = new System.Drawing.Size(309, 43);
+            this.output_window.TabIndex = 22;
             // 
             // btn_cancel
             // 
@@ -117,6 +116,7 @@
             this.btn_7.TabIndex = 36;
             this.btn_7.Text = "7";
             this.btn_7.UseVisualStyleBackColor = false;
+            this.btn_7.Click += new System.EventHandler(this.btn_7_Click);
             // 
             // btn_1
             // 
@@ -404,7 +404,7 @@
             this.Controls.Add(this.btn_sqr);
             this.Controls.Add(this.btn_sin);
             this.Controls.Add(this.btn_sq);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.output_window);
             this.Controls.Add(this.btn_cancel);
             this.Controls.Add(this.btn_percent);
             this.Controls.Add(this.btn_8);
@@ -437,7 +437,7 @@
 
         #endregion
 
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox output_window;
         private System.Windows.Forms.Button btn_cancel;
         private System.Windows.Forms.Button btn_percent;
         private System.Windows.Forms.Button btn_8;

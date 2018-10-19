@@ -17,39 +17,19 @@ namespace WindowsFormsApp1
             InitializeComponent();
         }
 
-        private void Button2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Button1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Button4_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Button7_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Button3_Click(object sender, EventArgs e)
-        {
-            
-        }
-
         private void Form1_Load(object sender, EventArgs e)
         {
 
         }
 
-        private void TextBox2_TextChanged(object sender, EventArgs e)
+        public void Writing(int btn)
         {
+            output_window.Text = Convert.ToString(btn);
+        }
 
+        private void btn_7_Click(object sender, EventArgs e)
+        {
+            output_window.Text = btn_7.Text;
         }
     }
 }
