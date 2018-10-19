@@ -28,5 +28,17 @@ namespace LibraryManagementSystem
                 librarain_txt.Text = Registration_form.getemail;
             }
         }
+
+        private void AllRequestsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            For_librarian_requests_form requests = new For_librarian_requests_form();
+            requests.Show();
+        }
+
+        private void OverDuesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            For_librarian_pending_form pending = new For_librarian_pending_form();
+            pending.Show();
+        }
     }
 }

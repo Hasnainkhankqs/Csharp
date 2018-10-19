@@ -33,8 +33,6 @@
             this.library_management_dbDataSet = new LibraryManagementSystem.library_management_dbDataSet();
             this.librarymanagementdbDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.deleteBtn = new System.Windows.Forms.Button();
-            this.editBtn = new System.Windows.Forms.Button();
-            this.cancelBtn = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.Registered_user_grid_view)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.library_management_dbDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.librarymanagementdbDataSetBindingSource)).BeginInit();
@@ -69,33 +67,12 @@
             this.deleteBtn.UseVisualStyleBackColor = true;
             this.deleteBtn.Click += new System.EventHandler(this.DeleteBtn_Click);
             // 
-            // editBtn
-            // 
-            this.editBtn.Location = new System.Drawing.Point(713, 115);
-            this.editBtn.Name = "editBtn";
-            this.editBtn.Size = new System.Drawing.Size(75, 23);
-            this.editBtn.TabIndex = 3;
-            this.editBtn.Text = "Edit";
-            this.editBtn.UseVisualStyleBackColor = true;
-            this.editBtn.Click += new System.EventHandler(this.EditBtn_Click);
-            // 
-            // cancelBtn
-            // 
-            this.cancelBtn.Location = new System.Drawing.Point(713, 186);
-            this.cancelBtn.Name = "cancelBtn";
-            this.cancelBtn.Size = new System.Drawing.Size(75, 23);
-            this.cancelBtn.TabIndex = 4;
-            this.cancelBtn.Text = "Cancel";
-            this.cancelBtn.UseVisualStyleBackColor = true;
-            // 
             // All_registered_users
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.GrayText;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.cancelBtn);
-            this.Controls.Add(this.editBtn);
             this.Controls.Add(this.deleteBtn);
             this.Controls.Add(this.Registered_user_grid_view);
             this.Name = "All_registered_users";
@@ -114,7 +91,5 @@
         private System.Windows.Forms.BindingSource librarymanagementdbDataSetBindingSource;
         private library_management_dbDataSet library_management_dbDataSet;
         private System.Windows.Forms.Button deleteBtn;
-        private System.Windows.Forms.Button editBtn;
-        private System.Windows.Forms.Button cancelBtn;
     }
 }

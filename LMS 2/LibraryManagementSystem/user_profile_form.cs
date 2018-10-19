@@ -79,8 +79,8 @@ namespace LibraryManagementSystem
                 
                 item_counting++;
 
-                if (LoanChecking(user_id) == true)
-                {
+                
+                
                     using (conn = new SqlConnection(ConnectionString))
                     {
                         if (Convert.ToInt32(item_combo.SelectedValue) != 0)
@@ -107,14 +107,14 @@ namespace LibraryManagementSystem
 
                             if (row > 0)
                             {
-                                MessageBox.Show("added successfully");
+                                MessageBox.Show("Request Has been sent");
                                 LoanHistory(user_id, loan_history_grid_view);
                                 OverDues(user_id, OverDues_gird_view);
                                 remaining_count.Text = Convert.ToString("You have selected " + item_counting + " /5 ");
                             }
                             else
                             {
-                                MessageBox.Show("Not added");
+                                MessageBox.Show("Request did not sent");
                             }
                         }
                         else
@@ -124,11 +124,6 @@ namespace LibraryManagementSystem
                         }
 
                     } 
-                }
-                else
-                {
-                    MessageBox.Show("Your dues are not clear");
-                }
                 
             }
             else
@@ -379,6 +374,18 @@ namespace LibraryManagementSystem
         {
             User_dues_history_form dues = new User_dues_history_form();
             dues.Show();
+        }
+
+        private void ApprovedItemsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Approved_request_form approved = new Approved_request_form();
+            approved.Show();
+        }
+
+        private void messgeCenterToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Message_from_librarian_form message = new Message_from_librarian_form();
+            message.Show();
         }
     }
 }

@@ -47,3 +47,5 @@ D:\Csharp\LMS 2\LibraryManagementSystem\obj\Debug\LibraryManagementSystem.exe
 D:\Csharp\LMS 2\LibraryManagementSystem\obj\Debug\LibraryManagementSystem.pdb
 D:\Csharp\LMS 2\LibraryManagementSystem\obj\Debug\LibraryManagementSystem.For_librarian_pending_form.resources
 D:\Csharp\LMS 2\LibraryManagementSystem\obj\Debug\LibraryManagementSystem.For_librarian_requests_form.resources
+D:\Csharp\LMS 2\LibraryManagementSystem\obj\Debug\LibraryManagementSystem.Approved_request_form.resources
+D:\Csharp\LMS 2\LibraryManagementSystem\obj\Debug\LibraryManagementSystem.Message_from_librarian_form.resources

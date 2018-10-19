@@ -48,6 +48,8 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.loanHistoryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.dueDatesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.approvedItemsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.messgeCenterToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.loan_history_grid_view)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.OverDues_gird_view)).BeginInit();
@@ -232,7 +234,9 @@
             this.menuStrip1.BackColor = System.Drawing.SystemColors.WindowFrame;
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.loanHistoryToolStripMenuItem,
-            this.dueDatesToolStripMenuItem});
+            this.dueDatesToolStripMenuItem,
+            this.approvedItemsToolStripMenuItem,
+            this.messgeCenterToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(800, 24);
@@ -254,6 +258,22 @@
             this.dueDatesToolStripMenuItem.Size = new System.Drawing.Size(72, 20);
             this.dueDatesToolStripMenuItem.Text = "Due Dates";
             this.dueDatesToolStripMenuItem.Click += new System.EventHandler(this.DueDatesToolStripMenuItem_Click);
+            // 
+            // approvedItemsToolStripMenuItem
+            // 
+            this.approvedItemsToolStripMenuItem.ForeColor = System.Drawing.Color.Cornsilk;
+            this.approvedItemsToolStripMenuItem.Name = "approvedItemsToolStripMenuItem";
+            this.approvedItemsToolStripMenuItem.Size = new System.Drawing.Size(103, 20);
+            this.approvedItemsToolStripMenuItem.Text = "Approved Items";
+            this.approvedItemsToolStripMenuItem.Click += new System.EventHandler(this.ApprovedItemsToolStripMenuItem_Click);
+            // 
+            // messgeCenterToolStripMenuItem
+            // 
+            this.messgeCenterToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.messgeCenterToolStripMenuItem.Name = "messgeCenterToolStripMenuItem";
+            this.messgeCenterToolStripMenuItem.Size = new System.Drawing.Size(97, 20);
+            this.messgeCenterToolStripMenuItem.Text = "Messge Center";
+            this.messgeCenterToolStripMenuItem.Click += new System.EventHandler(this.messgeCenterToolStripMenuItem_Click);
             // 
             // User_profile_form
             // 
@@ -310,5 +330,7 @@
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem loanHistoryToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem dueDatesToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem approvedItemsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem messgeCenterToolStripMenuItem;
     }
 }

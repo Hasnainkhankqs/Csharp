@@ -28,25 +28,18 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.librarain_txt = new System.Windows.Forms.Label();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.allRequestsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.overDuesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(39, 156);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(206, 33);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Librarian Form";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(415, 28);
+            this.label2.Location = new System.Drawing.Point(454, 9);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(95, 13);
             this.label2.TabIndex = 1;
@@ -55,11 +48,36 @@
             // librarain_txt
             // 
             this.librarain_txt.AutoSize = true;
-            this.librarain_txt.Location = new System.Drawing.Point(635, 28);
+            this.librarain_txt.Location = new System.Drawing.Point(630, 9);
             this.librarain_txt.Name = "librarain_txt";
             this.librarain_txt.Size = new System.Drawing.Size(63, 13);
             this.librarain_txt.TabIndex = 2;
             this.librarain_txt.Text = "changeable";
+            // 
+            // menuStrip1
+            // 
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.allRequestsToolStripMenuItem,
+            this.overDuesToolStripMenuItem});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(800, 24);
+            this.menuStrip1.TabIndex = 3;
+            this.menuStrip1.Text = "menuStrip1";
+            // 
+            // allRequestsToolStripMenuItem
+            // 
+            this.allRequestsToolStripMenuItem.Name = "allRequestsToolStripMenuItem";
+            this.allRequestsToolStripMenuItem.Size = new System.Drawing.Size(83, 20);
+            this.allRequestsToolStripMenuItem.Text = "All Requests";
+            this.allRequestsToolStripMenuItem.Click += new System.EventHandler(this.AllRequestsToolStripMenuItem_Click);
+            // 
+            // overDuesToolStripMenuItem
+            // 
+            this.overDuesToolStripMenuItem.Name = "overDuesToolStripMenuItem";
+            this.overDuesToolStripMenuItem.Size = new System.Drawing.Size(73, 20);
+            this.overDuesToolStripMenuItem.Text = "Over Dues";
+            this.overDuesToolStripMenuItem.Click += new System.EventHandler(this.OverDuesToolStripMenuItem_Click);
             // 
             // Librarian_form
             // 
@@ -69,20 +87,24 @@
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.librarain_txt);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.menuStrip1);
             this.ForeColor = System.Drawing.Color.Cornsilk;
+            this.MainMenuStrip = this.menuStrip1;
             this.Name = "Librarian_form";
             this.Text = "Librarian_form";
             this.Load += new System.EventHandler(this.Librarian_form_Load);
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         public System.Windows.Forms.Label librarain_txt;
+        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem allRequestsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem overDuesToolStripMenuItem;
     }
 }
