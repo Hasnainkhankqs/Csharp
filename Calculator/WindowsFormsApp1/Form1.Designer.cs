@@ -30,24 +30,31 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.textBox2 = new System.Windows.Forms.TextBox();
-            this.button19 = new System.Windows.Forms.Button();
-            this.button20 = new System.Windows.Forms.Button();
-            this.button21 = new System.Windows.Forms.Button();
-            this.button22 = new System.Windows.Forms.Button();
-            this.button23 = new System.Windows.Forms.Button();
-            this.button24 = new System.Windows.Forms.Button();
-            this.button25 = new System.Windows.Forms.Button();
-            this.button26 = new System.Windows.Forms.Button();
-            this.button27 = new System.Windows.Forms.Button();
-            this.button28 = new System.Windows.Forms.Button();
-            this.button29 = new System.Windows.Forms.Button();
-            this.button30 = new System.Windows.Forms.Button();
-            this.button31 = new System.Windows.Forms.Button();
-            this.button32 = new System.Windows.Forms.Button();
-            this.button33 = new System.Windows.Forms.Button();
-            this.button34 = new System.Windows.Forms.Button();
+            this.btn_cancel = new System.Windows.Forms.Button();
+            this.btn_percent = new System.Windows.Forms.Button();
+            this.btn_8 = new System.Windows.Forms.Button();
+            this.btn_7 = new System.Windows.Forms.Button();
+            this.btn_1 = new System.Windows.Forms.Button();
+            this.btn_2 = new System.Windows.Forms.Button();
+            this.btn_6 = new System.Windows.Forms.Button();
+            this.btn_5 = new System.Windows.Forms.Button();
+            this.btn_4 = new System.Windows.Forms.Button();
+            this.btn_9 = new System.Windows.Forms.Button();
+            this.btn_multiply = new System.Windows.Forms.Button();
+            this.btn_divide = new System.Windows.Forms.Button();
+            this.btn_minus = new System.Windows.Forms.Button();
+            this.btn_equal = new System.Windows.Forms.Button();
+            this.btn_plus = new System.Windows.Forms.Button();
+            this.btn_3 = new System.Windows.Forms.Button();
             this.button35 = new System.Windows.Forms.Button();
-            this.button36 = new System.Windows.Forms.Button();
+            this.btn_0 = new System.Windows.Forms.Button();
+            this.btn_sq = new System.Windows.Forms.Button();
+            this.btn_sin = new System.Windows.Forms.Button();
+            this.btn_cos = new System.Windows.Forms.Button();
+            this.btn_tan = new System.Windows.Forms.Button();
+            this.btn_sqr = new System.Windows.Forms.Button();
+            this.btn_pai = new System.Windows.Forms.Button();
+            this.btn_x_to_y = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // textBox2
@@ -55,223 +62,224 @@
             this.textBox2.Location = new System.Drawing.Point(15, 18);
             this.textBox2.Multiline = true;
             this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(224, 43);
+            this.textBox2.Size = new System.Drawing.Size(309, 43);
             this.textBox2.TabIndex = 22;
-            this.textBox2.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
+            this.textBox2.TextChanged += new System.EventHandler(this.TextBox2_TextChanged);
             // 
-            // button19
+            // btn_cancel
             // 
-            this.button19.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.button19.FlatAppearance.BorderColor = System.Drawing.Color.Red;
-            this.button19.FlatAppearance.BorderSize = 5;
-            this.button19.ForeColor = System.Drawing.Color.Crimson;
-            this.button19.Location = new System.Drawing.Point(199, 67);
-            this.button19.Name = "button19";
-            this.button19.Size = new System.Drawing.Size(40, 23);
-            this.button19.TabIndex = 39;
-            this.button19.Text = "C";
-            this.button19.UseVisualStyleBackColor = false;
+            this.btn_cancel.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btn_cancel.FlatAppearance.BorderColor = System.Drawing.Color.Red;
+            this.btn_cancel.FlatAppearance.BorderSize = 5;
+            this.btn_cancel.ForeColor = System.Drawing.Color.Crimson;
+            this.btn_cancel.Location = new System.Drawing.Point(199, 67);
+            this.btn_cancel.Name = "btn_cancel";
+            this.btn_cancel.Size = new System.Drawing.Size(40, 52);
+            this.btn_cancel.TabIndex = 39;
+            this.btn_cancel.Text = "C";
+            this.btn_cancel.UseVisualStyleBackColor = false;
             // 
-            // button20
+            // btn_percent
             // 
-            this.button20.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.button20.FlatAppearance.BorderColor = System.Drawing.Color.Red;
-            this.button20.FlatAppearance.BorderSize = 5;
-            this.button20.ForeColor = System.Drawing.Color.Crimson;
-            this.button20.Location = new System.Drawing.Point(199, 96);
-            this.button20.Name = "button20";
-            this.button20.Size = new System.Drawing.Size(40, 23);
-            this.button20.TabIndex = 38;
-            this.button20.Text = "%";
-            this.button20.UseVisualStyleBackColor = false;
+            this.btn_percent.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btn_percent.FlatAppearance.BorderColor = System.Drawing.Color.Red;
+            this.btn_percent.FlatAppearance.BorderSize = 5;
+            this.btn_percent.ForeColor = System.Drawing.Color.Crimson;
+            this.btn_percent.Location = new System.Drawing.Point(245, 67);
+            this.btn_percent.Name = "btn_percent";
+            this.btn_percent.Size = new System.Drawing.Size(40, 23);
+            this.btn_percent.TabIndex = 38;
+            this.btn_percent.Text = "%";
+            this.btn_percent.UseVisualStyleBackColor = false;
             // 
-            // button21
+            // btn_8
             // 
-            this.button21.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.button21.FlatAppearance.BorderColor = System.Drawing.Color.Red;
-            this.button21.FlatAppearance.BorderSize = 5;
-            this.button21.ForeColor = System.Drawing.Color.Crimson;
-            this.button21.Location = new System.Drawing.Point(61, 67);
-            this.button21.Name = "button21";
-            this.button21.Size = new System.Drawing.Size(40, 23);
-            this.button21.TabIndex = 37;
-            this.button21.Text = "2";
-            this.button21.UseVisualStyleBackColor = false;
+            this.btn_8.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btn_8.FlatAppearance.BorderColor = System.Drawing.Color.Red;
+            this.btn_8.FlatAppearance.BorderSize = 5;
+            this.btn_8.ForeColor = System.Drawing.Color.Crimson;
+            this.btn_8.Location = new System.Drawing.Point(61, 67);
+            this.btn_8.Name = "btn_8";
+            this.btn_8.Size = new System.Drawing.Size(40, 23);
+            this.btn_8.TabIndex = 37;
+            this.btn_8.Text = "8";
+            this.btn_8.UseVisualStyleBackColor = false;
             // 
-            // button22
+            // btn_7
             // 
-            this.button22.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.button22.FlatAppearance.BorderColor = System.Drawing.Color.Red;
-            this.button22.FlatAppearance.BorderSize = 5;
-            this.button22.ForeColor = System.Drawing.Color.Crimson;
-            this.button22.Location = new System.Drawing.Point(15, 67);
-            this.button22.Name = "button22";
-            this.button22.Size = new System.Drawing.Size(40, 23);
-            this.button22.TabIndex = 36;
-            this.button22.Text = "3";
-            this.button22.UseVisualStyleBackColor = false;
+            this.btn_7.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btn_7.FlatAppearance.BorderColor = System.Drawing.Color.Red;
+            this.btn_7.FlatAppearance.BorderSize = 5;
+            this.btn_7.ForeColor = System.Drawing.Color.Crimson;
+            this.btn_7.Location = new System.Drawing.Point(15, 67);
+            this.btn_7.Name = "btn_7";
+            this.btn_7.Size = new System.Drawing.Size(40, 23);
+            this.btn_7.TabIndex = 36;
+            this.btn_7.Text = "7";
+            this.btn_7.UseVisualStyleBackColor = false;
             // 
-            // button23
+            // btn_1
             // 
-            this.button23.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.button23.FlatAppearance.BorderColor = System.Drawing.Color.Red;
-            this.button23.FlatAppearance.BorderSize = 5;
-            this.button23.ForeColor = System.Drawing.Color.Crimson;
-            this.button23.Location = new System.Drawing.Point(15, 125);
-            this.button23.Name = "button23";
-            this.button23.Size = new System.Drawing.Size(40, 23);
-            this.button23.TabIndex = 35;
-            this.button23.Text = "4";
-            this.button23.UseVisualStyleBackColor = false;
+            this.btn_1.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btn_1.FlatAppearance.BorderColor = System.Drawing.Color.Red;
+            this.btn_1.FlatAppearance.BorderSize = 5;
+            this.btn_1.ForeColor = System.Drawing.Color.Crimson;
+            this.btn_1.Location = new System.Drawing.Point(15, 125);
+            this.btn_1.Name = "btn_1";
+            this.btn_1.Size = new System.Drawing.Size(40, 23);
+            this.btn_1.TabIndex = 35;
+            this.btn_1.Text = "1";
+            this.btn_1.UseVisualStyleBackColor = false;
             // 
-            // button24
+            // btn_2
             // 
-            this.button24.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.button24.FlatAppearance.BorderColor = System.Drawing.Color.Red;
-            this.button24.FlatAppearance.BorderSize = 5;
-            this.button24.ForeColor = System.Drawing.Color.Crimson;
-            this.button24.Location = new System.Drawing.Point(62, 125);
-            this.button24.Name = "button24";
-            this.button24.Size = new System.Drawing.Size(40, 23);
-            this.button24.TabIndex = 34;
-            this.button24.Text = "5";
-            this.button24.UseVisualStyleBackColor = false;
+            this.btn_2.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btn_2.FlatAppearance.BorderColor = System.Drawing.Color.Red;
+            this.btn_2.FlatAppearance.BorderSize = 5;
+            this.btn_2.ForeColor = System.Drawing.Color.Crimson;
+            this.btn_2.Location = new System.Drawing.Point(62, 125);
+            this.btn_2.Name = "btn_2";
+            this.btn_2.Size = new System.Drawing.Size(40, 23);
+            this.btn_2.TabIndex = 34;
+            this.btn_2.Text = "2";
+            this.btn_2.UseVisualStyleBackColor = false;
             // 
-            // button25
+            // btn_6
             // 
-            this.button25.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.button25.FlatAppearance.BorderColor = System.Drawing.Color.Red;
-            this.button25.FlatAppearance.BorderSize = 5;
-            this.button25.ForeColor = System.Drawing.Color.Crimson;
-            this.button25.Location = new System.Drawing.Point(107, 96);
-            this.button25.Name = "button25";
-            this.button25.Size = new System.Drawing.Size(40, 23);
-            this.button25.TabIndex = 33;
-            this.button25.Text = "6";
-            this.button25.UseVisualStyleBackColor = false;
+            this.btn_6.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btn_6.FlatAppearance.BorderColor = System.Drawing.Color.Red;
+            this.btn_6.FlatAppearance.BorderSize = 5;
+            this.btn_6.ForeColor = System.Drawing.Color.Crimson;
+            this.btn_6.Location = new System.Drawing.Point(107, 96);
+            this.btn_6.Name = "btn_6";
+            this.btn_6.Size = new System.Drawing.Size(40, 23);
+            this.btn_6.TabIndex = 33;
+            this.btn_6.Text = "6";
+            this.btn_6.UseVisualStyleBackColor = false;
             // 
-            // button26
+            // btn_5
             // 
-            this.button26.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.button26.FlatAppearance.BorderColor = System.Drawing.Color.Red;
-            this.button26.FlatAppearance.BorderSize = 5;
-            this.button26.ForeColor = System.Drawing.Color.Crimson;
-            this.button26.Location = new System.Drawing.Point(61, 96);
-            this.button26.Name = "button26";
-            this.button26.Size = new System.Drawing.Size(40, 23);
-            this.button26.TabIndex = 32;
-            this.button26.Text = "7";
-            this.button26.UseVisualStyleBackColor = false;
+            this.btn_5.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btn_5.FlatAppearance.BorderColor = System.Drawing.Color.Red;
+            this.btn_5.FlatAppearance.BorderSize = 5;
+            this.btn_5.ForeColor = System.Drawing.Color.Crimson;
+            this.btn_5.Location = new System.Drawing.Point(61, 96);
+            this.btn_5.Name = "btn_5";
+            this.btn_5.Size = new System.Drawing.Size(40, 23);
+            this.btn_5.TabIndex = 32;
+            this.btn_5.Text = "5";
+            this.btn_5.UseVisualStyleBackColor = false;
             // 
-            // button27
+            // btn_4
             // 
-            this.button27.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.button27.FlatAppearance.BorderColor = System.Drawing.Color.Red;
-            this.button27.FlatAppearance.BorderSize = 5;
-            this.button27.ForeColor = System.Drawing.Color.Crimson;
-            this.button27.Location = new System.Drawing.Point(15, 96);
-            this.button27.Name = "button27";
-            this.button27.Size = new System.Drawing.Size(40, 23);
-            this.button27.TabIndex = 31;
-            this.button27.Text = "8";
-            this.button27.UseVisualStyleBackColor = false;
+            this.btn_4.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btn_4.FlatAppearance.BorderColor = System.Drawing.Color.Red;
+            this.btn_4.FlatAppearance.BorderSize = 5;
+            this.btn_4.ForeColor = System.Drawing.Color.Crimson;
+            this.btn_4.Location = new System.Drawing.Point(15, 96);
+            this.btn_4.Name = "btn_4";
+            this.btn_4.Size = new System.Drawing.Size(40, 23);
+            this.btn_4.TabIndex = 31;
+            this.btn_4.Text = "4";
+            this.btn_4.UseVisualStyleBackColor = false;
             // 
-            // button28
+            // btn_9
             // 
-            this.button28.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.button28.FlatAppearance.BorderColor = System.Drawing.Color.Red;
-            this.button28.FlatAppearance.BorderSize = 5;
-            this.button28.ForeColor = System.Drawing.Color.Crimson;
-            this.button28.Location = new System.Drawing.Point(107, 67);
-            this.button28.Name = "button28";
-            this.button28.Size = new System.Drawing.Size(40, 23);
-            this.button28.TabIndex = 30;
-            this.button28.Text = "9";
-            this.button28.UseVisualStyleBackColor = false;
+            this.btn_9.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btn_9.FlatAppearance.BorderColor = System.Drawing.Color.Red;
+            this.btn_9.FlatAppearance.BorderSize = 5;
+            this.btn_9.ForeColor = System.Drawing.Color.Crimson;
+            this.btn_9.Location = new System.Drawing.Point(107, 67);
+            this.btn_9.Name = "btn_9";
+            this.btn_9.Size = new System.Drawing.Size(40, 23);
+            this.btn_9.TabIndex = 30;
+            this.btn_9.Text = "9";
+            this.btn_9.UseVisualStyleBackColor = false;
             // 
-            // button29
+            // btn_multiply
             // 
-            this.button29.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.button29.FlatAppearance.BorderColor = System.Drawing.Color.Red;
-            this.button29.FlatAppearance.BorderSize = 5;
-            this.button29.ForeColor = System.Drawing.Color.Crimson;
-            this.button29.Location = new System.Drawing.Point(153, 96);
-            this.button29.Name = "button29";
-            this.button29.Size = new System.Drawing.Size(40, 23);
-            this.button29.TabIndex = 29;
-            this.button29.Text = "x";
-            this.button29.UseVisualStyleBackColor = false;
+            this.btn_multiply.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btn_multiply.FlatAppearance.BorderColor = System.Drawing.Color.Red;
+            this.btn_multiply.FlatAppearance.BorderSize = 5;
+            this.btn_multiply.ForeColor = System.Drawing.Color.Crimson;
+            this.btn_multiply.Location = new System.Drawing.Point(153, 96);
+            this.btn_multiply.Name = "btn_multiply";
+            this.btn_multiply.Size = new System.Drawing.Size(40, 23);
+            this.btn_multiply.TabIndex = 29;
+            this.btn_multiply.Text = "x";
+            this.btn_multiply.UseVisualStyleBackColor = false;
             // 
-            // button30
+            // btn_divide
             // 
-            this.button30.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.button30.FlatAppearance.BorderColor = System.Drawing.Color.Red;
-            this.button30.FlatAppearance.BorderSize = 5;
-            this.button30.ForeColor = System.Drawing.Color.Crimson;
-            this.button30.Location = new System.Drawing.Point(153, 67);
-            this.button30.Name = "button30";
-            this.button30.Size = new System.Drawing.Size(40, 23);
-            this.button30.TabIndex = 28;
-            this.button30.Text = "/";
-            this.button30.UseVisualStyleBackColor = false;
+            this.btn_divide.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btn_divide.FlatAppearance.BorderColor = System.Drawing.Color.Red;
+            this.btn_divide.FlatAppearance.BorderSize = 5;
+            this.btn_divide.ForeColor = System.Drawing.Color.Crimson;
+            this.btn_divide.Location = new System.Drawing.Point(153, 67);
+            this.btn_divide.Name = "btn_divide";
+            this.btn_divide.Size = new System.Drawing.Size(40, 23);
+            this.btn_divide.TabIndex = 28;
+            this.btn_divide.Text = "/";
+            this.btn_divide.UseVisualStyleBackColor = false;
             // 
-            // button31
+            // btn_minus
             // 
-            this.button31.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.button31.FlatAppearance.BorderColor = System.Drawing.Color.Red;
-            this.button31.FlatAppearance.BorderSize = 5;
-            this.button31.ForeColor = System.Drawing.Color.Crimson;
-            this.button31.Location = new System.Drawing.Point(153, 125);
-            this.button31.Name = "button31";
-            this.button31.Size = new System.Drawing.Size(40, 23);
-            this.button31.TabIndex = 27;
-            this.button31.Text = "-";
-            this.button31.UseVisualStyleBackColor = false;
+            this.btn_minus.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btn_minus.FlatAppearance.BorderColor = System.Drawing.Color.Red;
+            this.btn_minus.FlatAppearance.BorderSize = 5;
+            this.btn_minus.ForeColor = System.Drawing.Color.Crimson;
+            this.btn_minus.Location = new System.Drawing.Point(153, 125);
+            this.btn_minus.Name = "btn_minus";
+            this.btn_minus.Size = new System.Drawing.Size(40, 23);
+            this.btn_minus.TabIndex = 27;
+            this.btn_minus.Text = "-";
+            this.btn_minus.UseVisualStyleBackColor = false;
             // 
-            // button32
+            // btn_equal
             // 
-            this.button32.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.button32.FlatAppearance.BorderColor = System.Drawing.Color.Red;
-            this.button32.FlatAppearance.BorderSize = 5;
-            this.button32.ForeColor = System.Drawing.Color.Crimson;
-            this.button32.Location = new System.Drawing.Point(199, 125);
-            this.button32.Name = "button32";
-            this.button32.Size = new System.Drawing.Size(40, 52);
-            this.button32.TabIndex = 26;
-            this.button32.Text = "=";
-            this.button32.UseVisualStyleBackColor = false;
+            this.btn_equal.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btn_equal.FlatAppearance.BorderColor = System.Drawing.Color.Red;
+            this.btn_equal.FlatAppearance.BorderSize = 5;
+            this.btn_equal.ForeColor = System.Drawing.Color.Crimson;
+            this.btn_equal.Location = new System.Drawing.Point(199, 125);
+            this.btn_equal.Name = "btn_equal";
+            this.btn_equal.Size = new System.Drawing.Size(40, 52);
+            this.btn_equal.TabIndex = 26;
+            this.btn_equal.Text = "=";
+            this.btn_equal.UseVisualStyleBackColor = false;
             // 
-            // button33
+            // btn_plus
             // 
-            this.button33.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.button33.FlatAppearance.BorderColor = System.Drawing.Color.Red;
-            this.button33.FlatAppearance.BorderSize = 5;
-            this.button33.ForeColor = System.Drawing.Color.Crimson;
-            this.button33.Location = new System.Drawing.Point(153, 154);
-            this.button33.Name = "button33";
-            this.button33.Size = new System.Drawing.Size(40, 23);
-            this.button33.TabIndex = 25;
-            this.button33.Text = "+";
-            this.button33.UseVisualStyleBackColor = false;
+            this.btn_plus.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btn_plus.FlatAppearance.BorderColor = System.Drawing.Color.Red;
+            this.btn_plus.FlatAppearance.BorderSize = 5;
+            this.btn_plus.ForeColor = System.Drawing.Color.Crimson;
+            this.btn_plus.Location = new System.Drawing.Point(153, 154);
+            this.btn_plus.Name = "btn_plus";
+            this.btn_plus.Size = new System.Drawing.Size(40, 23);
+            this.btn_plus.TabIndex = 25;
+            this.btn_plus.Text = "+";
+            this.btn_plus.UseVisualStyleBackColor = false;
             // 
-            // button34
+            // btn_3
             // 
-            this.button34.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.button34.FlatAppearance.BorderColor = System.Drawing.Color.Red;
-            this.button34.FlatAppearance.BorderSize = 5;
-            this.button34.ForeColor = System.Drawing.Color.Crimson;
-            this.button34.Location = new System.Drawing.Point(107, 125);
-            this.button34.Name = "button34";
-            this.button34.Size = new System.Drawing.Size(40, 23);
-            this.button34.TabIndex = 24;
-            this.button34.Text = "0";
-            this.button34.UseVisualStyleBackColor = false;
+            this.btn_3.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btn_3.FlatAppearance.BorderColor = System.Drawing.Color.Red;
+            this.btn_3.FlatAppearance.BorderSize = 5;
+            this.btn_3.ForeColor = System.Drawing.Color.Crimson;
+            this.btn_3.Location = new System.Drawing.Point(107, 125);
+            this.btn_3.Name = "btn_3";
+            this.btn_3.Size = new System.Drawing.Size(40, 23);
+            this.btn_3.TabIndex = 24;
+            this.btn_3.Text = "3";
+            this.btn_3.UseVisualStyleBackColor = false;
             // 
             // button35
             // 
             this.button35.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.button35.FlatAppearance.BorderColor = System.Drawing.Color.Red;
             this.button35.FlatAppearance.BorderSize = 5;
+            this.button35.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button35.ForeColor = System.Drawing.Color.Crimson;
             this.button35.Location = new System.Drawing.Point(107, 154);
             this.button35.Name = "button35";
@@ -280,43 +288,141 @@
             this.button35.Text = ".";
             this.button35.UseVisualStyleBackColor = false;
             // 
-            // button36
+            // btn_0
             // 
-            this.button36.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.button36.FlatAppearance.BorderColor = System.Drawing.Color.Red;
-            this.button36.FlatAppearance.BorderSize = 5;
-            this.button36.ForeColor = System.Drawing.Color.Crimson;
-            this.button36.Location = new System.Drawing.Point(15, 154);
-            this.button36.Name = "button36";
-            this.button36.Size = new System.Drawing.Size(86, 23);
-            this.button36.TabIndex = 21;
-            this.button36.Text = "0";
-            this.button36.UseVisualStyleBackColor = false;
+            this.btn_0.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btn_0.FlatAppearance.BorderColor = System.Drawing.Color.Red;
+            this.btn_0.FlatAppearance.BorderSize = 5;
+            this.btn_0.ForeColor = System.Drawing.Color.Crimson;
+            this.btn_0.Location = new System.Drawing.Point(15, 154);
+            this.btn_0.Name = "btn_0";
+            this.btn_0.Size = new System.Drawing.Size(86, 23);
+            this.btn_0.TabIndex = 21;
+            this.btn_0.Text = "0";
+            this.btn_0.UseVisualStyleBackColor = false;
+            // 
+            // btn_sq
+            // 
+            this.btn_sq.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btn_sq.FlatAppearance.BorderColor = System.Drawing.Color.Red;
+            this.btn_sq.FlatAppearance.BorderSize = 5;
+            this.btn_sq.ForeColor = System.Drawing.Color.Crimson;
+            this.btn_sq.Location = new System.Drawing.Point(291, 155);
+            this.btn_sq.Name = "btn_sq";
+            this.btn_sq.Size = new System.Drawing.Size(40, 23);
+            this.btn_sq.TabIndex = 40;
+            this.btn_sq.Text = "x^2";
+            this.btn_sq.UseVisualStyleBackColor = false;
+            // 
+            // btn_sin
+            // 
+            this.btn_sin.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btn_sin.FlatAppearance.BorderColor = System.Drawing.Color.Red;
+            this.btn_sin.FlatAppearance.BorderSize = 5;
+            this.btn_sin.ForeColor = System.Drawing.Color.Crimson;
+            this.btn_sin.Location = new System.Drawing.Point(245, 96);
+            this.btn_sin.Name = "btn_sin";
+            this.btn_sin.Size = new System.Drawing.Size(40, 23);
+            this.btn_sin.TabIndex = 41;
+            this.btn_sin.Text = "Sin";
+            this.btn_sin.UseVisualStyleBackColor = false;
+            // 
+            // btn_cos
+            // 
+            this.btn_cos.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btn_cos.FlatAppearance.BorderColor = System.Drawing.Color.Red;
+            this.btn_cos.FlatAppearance.BorderSize = 5;
+            this.btn_cos.ForeColor = System.Drawing.Color.Crimson;
+            this.btn_cos.Location = new System.Drawing.Point(245, 125);
+            this.btn_cos.Name = "btn_cos";
+            this.btn_cos.Size = new System.Drawing.Size(40, 23);
+            this.btn_cos.TabIndex = 42;
+            this.btn_cos.Text = "Cos";
+            this.btn_cos.UseVisualStyleBackColor = false;
+            // 
+            // btn_tan
+            // 
+            this.btn_tan.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btn_tan.FlatAppearance.BorderColor = System.Drawing.Color.Red;
+            this.btn_tan.FlatAppearance.BorderSize = 5;
+            this.btn_tan.ForeColor = System.Drawing.Color.Crimson;
+            this.btn_tan.Location = new System.Drawing.Point(245, 154);
+            this.btn_tan.Name = "btn_tan";
+            this.btn_tan.Size = new System.Drawing.Size(40, 23);
+            this.btn_tan.TabIndex = 43;
+            this.btn_tan.Text = "Tan";
+            this.btn_tan.UseVisualStyleBackColor = false;
+            // 
+            // btn_sqr
+            // 
+            this.btn_sqr.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btn_sqr.FlatAppearance.BorderColor = System.Drawing.Color.Red;
+            this.btn_sqr.FlatAppearance.BorderSize = 5;
+            this.btn_sqr.ForeColor = System.Drawing.Color.Crimson;
+            this.btn_sqr.Location = new System.Drawing.Point(291, 67);
+            this.btn_sqr.Name = "btn_sqr";
+            this.btn_sqr.Size = new System.Drawing.Size(40, 23);
+            this.btn_sqr.TabIndex = 40;
+            this.btn_sqr.Text = "_/";
+            this.btn_sqr.UseVisualStyleBackColor = false;
+            // 
+            // btn_pai
+            // 
+            this.btn_pai.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btn_pai.FlatAppearance.BorderColor = System.Drawing.Color.Red;
+            this.btn_pai.FlatAppearance.BorderSize = 5;
+            this.btn_pai.ForeColor = System.Drawing.Color.Crimson;
+            this.btn_pai.Location = new System.Drawing.Point(291, 96);
+            this.btn_pai.Name = "btn_pai";
+            this.btn_pai.Size = new System.Drawing.Size(40, 23);
+            this.btn_pai.TabIndex = 41;
+            this.btn_pai.Text = "Pai";
+            this.btn_pai.UseVisualStyleBackColor = false;
+            // 
+            // btn_x_to_y
+            // 
+            this.btn_x_to_y.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btn_x_to_y.FlatAppearance.BorderColor = System.Drawing.Color.Red;
+            this.btn_x_to_y.FlatAppearance.BorderSize = 5;
+            this.btn_x_to_y.ForeColor = System.Drawing.Color.Crimson;
+            this.btn_x_to_y.Location = new System.Drawing.Point(291, 125);
+            this.btn_x_to_y.Name = "btn_x_to_y";
+            this.btn_x_to_y.Size = new System.Drawing.Size(40, 23);
+            this.btn_x_to_y.TabIndex = 42;
+            this.btn_x_to_y.Text = "x^y";
+            this.btn_x_to_y.UseVisualStyleBackColor = false;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(254, 204);
+            this.ClientSize = new System.Drawing.Size(336, 204);
+            this.Controls.Add(this.btn_x_to_y);
+            this.Controls.Add(this.btn_tan);
+            this.Controls.Add(this.btn_pai);
+            this.Controls.Add(this.btn_cos);
+            this.Controls.Add(this.btn_sqr);
+            this.Controls.Add(this.btn_sin);
+            this.Controls.Add(this.btn_sq);
             this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.button19);
-            this.Controls.Add(this.button20);
-            this.Controls.Add(this.button21);
-            this.Controls.Add(this.button22);
-            this.Controls.Add(this.button23);
-            this.Controls.Add(this.button24);
-            this.Controls.Add(this.button25);
-            this.Controls.Add(this.button26);
-            this.Controls.Add(this.button27);
-            this.Controls.Add(this.button28);
-            this.Controls.Add(this.button29);
-            this.Controls.Add(this.button30);
-            this.Controls.Add(this.button31);
-            this.Controls.Add(this.button32);
-            this.Controls.Add(this.button33);
-            this.Controls.Add(this.button34);
+            this.Controls.Add(this.btn_cancel);
+            this.Controls.Add(this.btn_percent);
+            this.Controls.Add(this.btn_8);
+            this.Controls.Add(this.btn_7);
+            this.Controls.Add(this.btn_1);
+            this.Controls.Add(this.btn_2);
+            this.Controls.Add(this.btn_6);
+            this.Controls.Add(this.btn_5);
+            this.Controls.Add(this.btn_4);
+            this.Controls.Add(this.btn_9);
+            this.Controls.Add(this.btn_multiply);
+            this.Controls.Add(this.btn_divide);
+            this.Controls.Add(this.btn_minus);
+            this.Controls.Add(this.btn_equal);
+            this.Controls.Add(this.btn_plus);
+            this.Controls.Add(this.btn_3);
             this.Controls.Add(this.button35);
-            this.Controls.Add(this.button36);
+            this.Controls.Add(this.btn_0);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
@@ -332,24 +438,31 @@
         #endregion
 
         private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.Button button19;
-        private System.Windows.Forms.Button button20;
-        private System.Windows.Forms.Button button21;
-        private System.Windows.Forms.Button button22;
-        private System.Windows.Forms.Button button23;
-        private System.Windows.Forms.Button button24;
-        private System.Windows.Forms.Button button25;
-        private System.Windows.Forms.Button button26;
-        private System.Windows.Forms.Button button27;
-        private System.Windows.Forms.Button button28;
-        private System.Windows.Forms.Button button29;
-        private System.Windows.Forms.Button button30;
-        private System.Windows.Forms.Button button31;
-        private System.Windows.Forms.Button button32;
-        private System.Windows.Forms.Button button33;
-        private System.Windows.Forms.Button button34;
+        private System.Windows.Forms.Button btn_cancel;
+        private System.Windows.Forms.Button btn_percent;
+        private System.Windows.Forms.Button btn_8;
+        private System.Windows.Forms.Button btn_7;
+        private System.Windows.Forms.Button btn_1;
+        private System.Windows.Forms.Button btn_2;
+        private System.Windows.Forms.Button btn_6;
+        private System.Windows.Forms.Button btn_5;
+        private System.Windows.Forms.Button btn_4;
+        private System.Windows.Forms.Button btn_9;
+        private System.Windows.Forms.Button btn_multiply;
+        private System.Windows.Forms.Button btn_divide;
+        private System.Windows.Forms.Button btn_minus;
+        private System.Windows.Forms.Button btn_equal;
+        private System.Windows.Forms.Button btn_plus;
+        private System.Windows.Forms.Button btn_3;
         private System.Windows.Forms.Button button35;
-        private System.Windows.Forms.Button button36;
+        private System.Windows.Forms.Button btn_0;
+        private System.Windows.Forms.Button btn_sq;
+        private System.Windows.Forms.Button btn_sin;
+        private System.Windows.Forms.Button btn_cos;
+        private System.Windows.Forms.Button btn_tan;
+        private System.Windows.Forms.Button btn_sqr;
+        private System.Windows.Forms.Button btn_pai;
+        private System.Windows.Forms.Button btn_x_to_y;
     }
 }
 

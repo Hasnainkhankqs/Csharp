@@ -382,7 +382,7 @@ namespace LibraryManagementSystem
             approved.Show();
         }
 
-        private void messgeCenterToolStripMenuItem_Click(object sender, EventArgs e)
+        private void MessgeCenterToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Message_from_librarian_form message = new Message_from_librarian_form();
             message.Show();

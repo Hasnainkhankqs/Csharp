@@ -247,16 +247,16 @@
             // 
             this.loanHistoryToolStripMenuItem.ForeColor = System.Drawing.SystemColors.MenuBar;
             this.loanHistoryToolStripMenuItem.Name = "loanHistoryToolStripMenuItem";
-            this.loanHistoryToolStripMenuItem.Size = new System.Drawing.Size(86, 20);
-            this.loanHistoryToolStripMenuItem.Text = "Loan History";
+            this.loanHistoryToolStripMenuItem.Size = new System.Drawing.Size(107, 20);
+            this.loanHistoryToolStripMenuItem.Text = "Requests History";
             this.loanHistoryToolStripMenuItem.Click += new System.EventHandler(this.LoanHistoryToolStripMenuItem_Click);
             // 
             // dueDatesToolStripMenuItem
             // 
             this.dueDatesToolStripMenuItem.ForeColor = System.Drawing.SystemColors.MenuBar;
             this.dueDatesToolStripMenuItem.Name = "dueDatesToolStripMenuItem";
-            this.dueDatesToolStripMenuItem.Size = new System.Drawing.Size(72, 20);
-            this.dueDatesToolStripMenuItem.Text = "Due Dates";
+            this.dueDatesToolStripMenuItem.Size = new System.Drawing.Size(99, 20);
+            this.dueDatesToolStripMenuItem.Text = "Due Dates Item";
             this.dueDatesToolStripMenuItem.Click += new System.EventHandler(this.DueDatesToolStripMenuItem_Click);
             // 
             // approvedItemsToolStripMenuItem
@@ -273,7 +273,7 @@
             this.messgeCenterToolStripMenuItem.Name = "messgeCenterToolStripMenuItem";
             this.messgeCenterToolStripMenuItem.Size = new System.Drawing.Size(97, 20);
             this.messgeCenterToolStripMenuItem.Text = "Messge Center";
-            this.messgeCenterToolStripMenuItem.Click += new System.EventHandler(this.messgeCenterToolStripMenuItem_Click);
+            this.messgeCenterToolStripMenuItem.Click += new System.EventHandler(this.MessgeCenterToolStripMenuItem_Click);
             // 
             // User_profile_form
             // 
