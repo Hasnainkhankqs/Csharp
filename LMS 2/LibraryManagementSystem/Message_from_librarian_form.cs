@@ -96,5 +96,13 @@ namespace LibraryManagementSystem
                 }
             }
         }
+        //protected void GrdView_RowDataBound(object sender, GridViewRowEventArgs e)
+        //{
+
+        //    if (e.Row.RowType == DataControlRowType.DataRow)
+        //    {
+        //        grdListings.Columns[0].ItemStyle.Width = 50;
+        //    }
+        //}
     }
 }

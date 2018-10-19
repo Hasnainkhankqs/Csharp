@@ -40,6 +40,8 @@
             this.message_grid_view.Name = "message_grid_view";
             this.message_grid_view.Size = new System.Drawing.Size(800, 450);
             this.message_grid_view.TabIndex = 0;
+            
+        
             // 
             // Message_from_librarian_form
             // 

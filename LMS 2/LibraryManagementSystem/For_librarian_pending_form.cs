@@ -62,6 +62,9 @@ namespace LibraryManagementSystem
         {
             using (conn = new SqlConnection(ConnectionString))
             {
+                user_id = Convert.ToInt32(pending_gridview.CurrentRow.Cells["user_id"].Value);
+                item_id = Convert.ToInt32(pending_gridview.CurrentRow.Cells["item_id"].Value);
+                
                 conn.Open();
                 string warnningMessage = textarea.Text;
                 string query = "insert into pending_message_tbl (user_id,item_id,message) values (@user_id,@item_id,@message)";
